@@ -1,3 +1,7 @@
+import { SystemPage } from "@/components/shophouse-heritage/SystemPage";
+
+export const metadata = { title: "Design system · The Heritage Trail" };
+
 export default function Page() {
-  return <main className="p-10 font-display text-4xl">shophouse-heritage system: in progress</main>;
+  return <SystemPage />;
 }
