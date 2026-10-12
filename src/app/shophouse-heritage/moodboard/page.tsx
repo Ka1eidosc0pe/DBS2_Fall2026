@@ -1,3 +1,7 @@
+import { MoodboardPage } from "@/components/shophouse-heritage/MoodboardPage";
+
+export const metadata = { title: "Mood board · The Heritage Trail" };
+
 export default function Page() {
-  return <main className="p-10 font-display text-4xl">shophouse-heritage moodboard: in progress</main>;
+  return <MoodboardPage />;
 }

@@ -12,11 +12,11 @@
   --on-brand: #fffdf8;
   --accent: #e8837a;
   --accent-hover: #ee978f;
-  --accent-pressed: #d96f66;
+  --accent-pressed: #e07a71;
   --on-accent: #1f2a33;
   --focus: #1f5f52;
   --success: #2e6e5e;
-  --warning: #a8741a;
+  --warning: #8f600f;
   --danger: #a8324a;
   --info: #2b7b85;
   --type-display: var(--font-heritage-display);
@@ -32,5 +32,105 @@
   --turmeric: #d9a23b;
   --indigo: #2b3a67;
   --jade-deep: #1f5f52;
+  --mangosteen: #7b3f68;
+  --pandan: #66742c;
+  --terracotta: #b0603a;
+  --tile-blush: #f3c4be;
+  --tile-mist: #ddeeeb;
+  /* district colours (dots, rules and tile accents; never the only carrier of meaning) */
+  --d-chinatown: var(--turmeric);
+  --d-kampong-glam: var(--peranakan-teal);
+  --d-little-india: var(--indigo);
+  --d-joo-chiat: var(--mangosteen);
+  --d-civic: var(--pandan);
+  --d-emerald-hill: var(--jade-deep);
+  /* motion */
+  --ease-craft: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --dur-fast: 200ms;
+  --dur-base: 300ms;
+  --dur-slow: 400ms;
+  /* arch radii */
+  --arch: 999px 999px var(--r-card) var(--r-card);
   color-scheme: light;
+}
+
+/* Display type: soft, wonky Fraunces at large sizes */
+[data-theme="shophouse-heritage"] .sh-display {
+  font-family: var(--type-display);
+  font-variation-settings: "SOFT" 100, "WONK" 1, "opsz" 144;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  font-optical-sizing: none;
+}
+[data-theme="shophouse-heritage"] .sh-title {
+  font-family: var(--type-display);
+  font-variation-settings: "SOFT" 80, "WONK" 1, "opsz" 48;
+  font-weight: 600;
+  font-optical-sizing: none;
+}
+[data-theme="shophouse-heritage"] .sh-year {
+  font-family: var(--type-display);
+  font-variation-settings: "SOFT" 100, "WONK" 1, "opsz" 36;
+  font-style: italic;
+  font-variant-numeric: oldstyle-nums;
+  font-optical-sizing: none;
+}
+[data-theme="shophouse-heritage"] .sh-label {
+  font-family: var(--type-body);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+/* A control forced into its focus-visible look on the design-system page */
+[data-theme="shophouse-heritage"] [data-force="focus"] {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+/* Arches reveal upward with a clip-path wipe */
+@keyframes sh-arch-reveal {
+  from { clip-path: inset(100% 0 0 0); }
+  to { clip-path: inset(0 0 0 0); }
+}
+[data-theme="shophouse-heritage"] .sh-reveal {
+  animation: sh-arch-reveal var(--dur-slow) var(--ease-craft) both;
+}
+@keyframes sh-fade-up {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: none; }
+}
+[data-theme="shophouse-heritage"] .sh-fade-up {
+  animation: sh-fade-up var(--dur-base) var(--ease-craft) both;
+}
+@keyframes sh-spin-in {
+  from { opacity: 0; transform: rotate(-30deg) scale(0.85); }
+  to { opacity: 1; transform: none; }
+}
+[data-theme="shophouse-heritage"] .sh-spin-in {
+  animation: sh-spin-in var(--dur-slow) var(--ease-craft) both;
+}
+@keyframes sh-shimmer {
+  from { background-position: 200% 0; }
+  to { background-position: -200% 0; }
+}
+[data-theme="shophouse-heritage"] .sh-skeleton {
+  background: linear-gradient(90deg, var(--surface-2) 25%, var(--bg) 50%, var(--surface-2) 75%);
+  background-size: 200% 100%;
+  animation: sh-shimmer 1.6s linear infinite;
+}
+@keyframes sh-spin { to { transform: rotate(360deg); } }
+[data-theme="shophouse-heritage"] .sh-spinner { animation: sh-spin 0.9s linear infinite; }
+
+
+[data-theme="shophouse-heritage"] .sh-check:checked {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none' stroke='%23fffdf8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 10.5l3.5 3.5L15 6.5'/%3E%3C/svg%3E");
+  background-size: 100% 100%;
+}
+@keyframes sh-slide-in { from { transform: translateX(100%); } to { transform: none; } }
+@keyframes sh-sheet-in { from { transform: translateY(100%); } to { transform: none; } }
+@keyframes sh-backdrop-in { from { opacity: 0; } to { opacity: 1; } }
+[data-theme="shophouse-heritage"] .sh-drawer { animation: sh-sheet-in var(--dur-slow) var(--ease-craft) both; }
+[data-theme="shophouse-heritage"] .sh-backdrop { animation: sh-backdrop-in var(--dur-base) ease-out both; }
+@media (min-width: 768px) {
+  [data-theme="shophouse-heritage"] .sh-drawer { animation-name: sh-slide-in; }
 }
