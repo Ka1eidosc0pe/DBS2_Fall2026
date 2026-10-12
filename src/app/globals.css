@@ -1,26 +1,75 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/* Each style defines the same semantic tokens under its own theme class.
+   Utilities (bg-surface, text-ink, bg-accent, rounded-card, font-display, ...)
+   resolve to whichever theme wraps them. Style-only extras are plain CSS vars,
+   used as bg-(--hdb-mint) etc. */
+@import "../styles/hub.css";
+@import "../styles/marina-noir.css";
+@import "../styles/hawker-bright.css";
+@import "../styles/shophouse-heritage.css";
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* Color roles */
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-ink: var(--ink);
+  --color-ink-muted: var(--ink-muted);
+  --color-ink-subtle: var(--ink-subtle);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+  --color-brand: var(--brand);
+  --color-on-brand: var(--on-brand);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-pressed: var(--accent-pressed);
+  --color-on-accent: var(--on-accent);
+  --color-focus: var(--focus);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-danger: var(--danger);
+  --color-info: var(--info);
+
+  /* Typeface roles */
+  --font-display: var(--type-display);
+  --font-body: var(--type-body);
+  --font-mono: var(--type-mono);
+
+  /* Shape */
+  --radius-control: var(--r-control);
+  --radius-card: var(--r-card);
+  --radius-pill: var(--r-pill);
+  --shadow-card: var(--elev-card);
+  --shadow-raised: var(--elev-raised);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
   }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  body {
+    margin: 0;
+  }
+  /* A theme wrapper paints its own page */
+  [data-theme] {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--type-body);
+    min-height: 100dvh;
+  }
+  [data-theme] :focus-visible {
+    outline: 2px solid var(--focus);
+    outline-offset: 2px;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
 }

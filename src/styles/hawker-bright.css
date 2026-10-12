@@ -1,0 +1,37 @@
+/* Hawker Bright: tokens. Owned by the Hawker Bright design system. */
+[data-theme="hawker-bright"] {
+  --bg: #fbf5ea;
+  --surface: #ffffff;
+  --surface-2: #f3e9d7;
+  --ink: #2b1d14;
+  --ink-muted: #6b5646;
+  --ink-subtle: #8f7a69;
+  --line: #e2d4bd;
+  --line-strong: #2b1d14;
+  --brand: #2f7d4f;
+  --on-brand: #ffffff;
+  --accent: #f26b2a;
+  --accent-hover: #f5824a;
+  --accent-pressed: #d9581b;
+  --on-accent: #2b1d14;
+  --focus: #2b1d14;
+  --success: #2f7d4f;
+  --warning: #b07a00;
+  --danger: #c62828;
+  --info: #2c6aa0;
+  --type-display: var(--font-hawker-display);
+  --type-body: var(--font-hawker-body);
+  --type-mono: var(--font-hawker-mono);
+  --r-control: 999px;
+  --r-card: 18px;
+  --r-pill: 999px;
+  --elev-card: 4px 4px 0 #2b1d14;
+  --elev-raised: 6px 6px 0 #2b1d14;
+  /* extras: HDB block pastels, used for categories */
+  --hdb-mint: #bfe3d0;
+  --hdb-peach: #f7c9a9;
+  --hdb-sky: #bfd9ee;
+  --hdb-butter: #f6e3a1;
+  --hdb-lilac: #d9cceb;
+  color-scheme: light;
+}

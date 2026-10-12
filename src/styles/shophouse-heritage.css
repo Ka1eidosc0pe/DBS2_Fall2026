@@ -1,0 +1,36 @@
+/* Shophouse Heritage: tokens. Owned by the Shophouse Heritage design system. */
+[data-theme="shophouse-heritage"] {
+  --bg: #f6f1e7;
+  --surface: #fffdf8;
+  --surface-2: #ede4d3;
+  --ink: #1f2a33;
+  --ink-muted: #5a6670;
+  --ink-subtle: #7d8790;
+  --line: #d8cdb8;
+  --line-strong: #1f2a33;
+  --brand: #2e6e5e;
+  --on-brand: #fffdf8;
+  --accent: #e8837a;
+  --accent-hover: #ee978f;
+  --accent-pressed: #d96f66;
+  --on-accent: #1f2a33;
+  --focus: #1f5f52;
+  --success: #2e6e5e;
+  --warning: #a8741a;
+  --danger: #a8324a;
+  --info: #2b7b85;
+  --type-display: var(--font-heritage-display);
+  --type-body: var(--font-heritage-body);
+  --type-mono: var(--font-heritage-body);
+  --r-control: 6px;
+  --r-card: 10px;
+  --r-pill: 999px;
+  --elev-card: 0 1px 0 #d8cdb8, 0 8px 24px -16px rgb(31 42 51 / 0.35);
+  --elev-raised: 0 18px 40px -18px rgb(31 42 51 / 0.45);
+  /* extras: tile and shophouse palette */
+  --peranakan-teal: #3a9ca6;
+  --turmeric: #d9a23b;
+  --indigo: #2b3a67;
+  --jade-deep: #1f5f52;
+  color-scheme: light;
+}

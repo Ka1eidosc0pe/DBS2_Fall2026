@@ -1,0 +1,33 @@
+/* Marina Noir: tokens. Owned by the Marina Noir design system. */
+[data-theme="marina-noir"] {
+  --bg: #0b0a0a;
+  --surface: #141212;
+  --surface-2: #1c1918;
+  --ink: #f3ede4;
+  --ink-muted: #a89f94;
+  --ink-subtle: #7a7168;
+  --line: #2e2926;
+  --line-strong: #4a403a;
+  --brand: #6e1423;
+  --on-brand: #f3ede4;
+  --accent: #d4b67a;
+  --accent-hover: #e3ca94;
+  --accent-pressed: #b8995c;
+  --on-accent: #0b0a0a;
+  --focus: #f3ede4;
+  --success: #7fa88b;
+  --warning: #d9a55b;
+  --danger: #e0614f;
+  --info: #8da4c4;
+  --type-display: var(--font-noir-display);
+  --type-body: var(--font-noir-body);
+  --type-mono: var(--font-noir-body);
+  --r-control: 0px;
+  --r-card: 0px;
+  --r-pill: 999px;
+  --elev-card: none;
+  --elev-raised: 0 24px 60px -20px rgb(0 0 0 / 0.8);
+  /* extras */
+  --lacquer: #a3172b;
+  color-scheme: dark;
+}
