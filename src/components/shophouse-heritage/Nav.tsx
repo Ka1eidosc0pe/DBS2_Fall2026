@@ -55,7 +55,7 @@ export function SiteNav({
       <div className="mx-auto flex h-16 max-w-[84rem] items-center gap-4 px-5 md:px-10">
         <Link href={`/${SLUG}/`} className="flex items-center gap-2.5 rounded-control" aria-label={`${title}, home`}>
           <TileMotif size={30} />
-          <span className="sh-title text-[1.15rem] leading-none text-ink">{title}</span>
+          <span className="sh-title whitespace-nowrap text-[1.15rem] leading-none text-ink">{title}</span>
         </Link>
         <nav aria-label="Sections" className="ml-6 hidden items-center gap-1 lg:flex">
           {links.map((l) => (
@@ -70,7 +70,7 @@ export function SiteNav({
             <button
               type="button"
               onClick={onOpenTrail}
-              className="ml-2 inline-flex min-h-11 items-center gap-2 rounded-control border border-brand px-3.5 text-sm font-semibold text-brand hover:bg-brand/10 md:min-h-10"
+              className="ml-2 inline-flex min-h-11 whitespace-nowrap items-center gap-2 rounded-control border border-brand px-3.5 text-sm font-semibold text-brand hover:bg-brand/10 md:min-h-10"
             >
               <RouteIcon size={18} strokeWidth={1.5} aria-hidden />
               My trail
