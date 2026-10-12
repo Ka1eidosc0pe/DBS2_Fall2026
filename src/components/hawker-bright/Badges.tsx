@@ -49,7 +49,7 @@ export function PriceTier({ tier, className }: { tier: "$" | "$$" | "$$$"; class
     <span className={cn("hb-tier", className)} aria-label={`Price tier ${tier.length} of 3`}>
       <span aria-hidden>
         {tier}
-        <span className="text-ink-subtle">{"$$$".slice(tier.length)}</span>
+        <span className="text-line">{"$$$".slice(tier.length)}</span>
       </span>
     </span>
   );

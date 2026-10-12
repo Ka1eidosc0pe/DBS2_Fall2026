@@ -87,7 +87,7 @@ export function Burst({ children, className, fill = "#f6e3a1" }: { children: Rea
   const pts = Array.from({ length: 24 }, (_, i) => {
     const a = (i / 24) * Math.PI * 2;
     const rr = i % 2 === 0 ? 48 : 40;
-    return `${50 + Math.cos(a) * rr},${50 + Math.sin(a) * rr}`;
+    return `${(50 + Math.cos(a) * rr).toFixed(2)},${(50 + Math.sin(a) * rr).toFixed(2)}`;
   }).join(" ");
   return (
     <div className={className} style={{ position: "relative", aspectRatio: "1" }}>

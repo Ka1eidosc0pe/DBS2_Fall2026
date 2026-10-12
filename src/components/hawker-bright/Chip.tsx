@@ -40,19 +40,21 @@ export function Segmented({
   value,
   onChange,
   forceState,
+  forceIndex = 0,
 }: {
   label: string;
   options: SegmentedOption[];
   value: string;
   onChange?: (v: string) => void;
-  /** Applies a forced state to the selected (or first, for non-selected states) item */
+  /** Applies a forced state to the item at forceIndex (for the design system page) */
   forceState?: ForceState;
+  forceIndex?: number;
 }) {
   return (
     <div role="group" aria-label={label} className="hb-seg">
       {options.map((o, i) => {
         const on = o.value === value;
-        const forced = forceState && (forceState === "selected" ? on : i === (forceState === "disabled" ? options.length - 1 : 0) && !on) ? forceState : undefined;
+        const forced = forceState && i === forceIndex ? forceState : undefined;
         return (
           <button
             key={o.value}
@@ -61,7 +63,7 @@ export function Segmented({
             data-force={forced}
             disabled={o.disabled || forced === "disabled"}
             onClick={() => onChange?.(o.value)}
-            className="hb-seg-item"
+            className="hb-seg-item hb-focusable"
           >
             {o.label}
           </button>

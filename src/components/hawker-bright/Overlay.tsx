@@ -88,7 +88,7 @@ export function Drawer({
       <header className="flex items-center gap-3 border-b-2 border-ink px-5 py-3.5" style={{ background: tone, color: onTone }}>
         <div className="min-w-0 flex-1">
           {eyebrow ? <div className="hb-mono opacity-90">{eyebrow}</div> : null}
-          <h2 id={titleId} className="hb-title truncate !text-[1.65rem] uppercase">
+          <h2 id={titleId} className="hb-title line-clamp-2 !text-[1.65rem] uppercase !leading-[0.95]">
             {title}
           </h2>
         </div>

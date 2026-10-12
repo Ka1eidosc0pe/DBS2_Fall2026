@@ -11,7 +11,7 @@ export const ROLE_SWATCHES: Swatch[] = [
   { token: "brand", name: "Pandan", hex: "#2F7D4F", use: "Selected chips, stall-sign headers, nav current page.", partner: { label: "on-brand", hex: "#FFFFFF" } },
   { token: "accent", name: "Sambal", hex: "#F26B2A", use: "The primary action only, and its counter badge.", partner: { label: "on-accent", hex: "#2B1D14" } },
   { token: "accent-hover", name: "Fresh-pounded sambal", hex: "#F5824A", use: "Primary action on hover.", partner: { label: "on-accent", hex: "#2B1D14" } },
-  { token: "accent-pressed", name: "Wok-burnt sambal", hex: "#D9581B", use: "Primary action pressed.", partner: { label: "on-accent", hex: "#2B1D14" } },
+  { token: "accent-pressed", name: "Wok-burnt sambal", hex: "#E0601F", use: "Primary action pressed.", partner: { label: "on-accent", hex: "#2B1D14" } },
   { token: "danger", name: "Chilli", hex: "#C62828", use: "Errors and destructive actions.", partner: { label: "surface", hex: "#FFFFFF" } },
   { token: "success", name: "Kangkong", hex: "#2F7D4F", use: "Confirmed and on-list marks.", partner: { label: "surface", hex: "#FFFFFF" } },
   { token: "warning", name: "Gula melaka", hex: "#8A5D00", use: "Cautions, with an icon.", partner: { label: "surface", hex: "#FFFFFF" } },

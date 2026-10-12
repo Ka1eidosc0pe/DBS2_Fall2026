@@ -20,7 +20,7 @@ export function groupByCentre(items: Stall[]) {
 export function Receipt({ items, onRemove, className }: { items: Stall[]; onRemove?: (id: string) => void; className?: string }) {
   const groups = groupByCentre(items);
   return (
-    <div className={cn("hb-zigzag-bottom border-2 border-b-0 border-ink bg-surface px-5 pb-6 pt-5", className)} style={{ borderRadius: "6px 6px 0 0" }}>
+    <div className={cn("hb-zigzag-bottom mb-4 border-2 border-b-0 border-ink bg-surface px-5 pb-6 pt-5", className)} style={{ borderRadius: "6px 6px 0 0" }}>
       <p className="hb-mono text-center tracking-[0.2em]">MAKAN MAP · ORDER SLIP</p>
       <p className="hb-mono mt-1 text-center text-ink-muted">CHOPE A SEAT · KOPI&apos;S ON</p>
       <div className="my-3 border-t-2 border-dashed border-ink" />
