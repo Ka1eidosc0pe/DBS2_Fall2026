@@ -68,7 +68,7 @@ export const STYLES: StyleEntry[] = [
       { name: "Turmeric", hex: "#D9A23B" },
       { name: "Nyonya Coral", hex: "#E8837A" },
     ],
-    card: { bg: "#E3EDE6", ink: "#1F2A33", muted: "#5A6670", accent: "#E8837A", onAccent: "#1F2A33", line: "#BCCFC3", edge: "#2E6E5E" },
+    card: { bg: "#E3EDE6", ink: "#1F2A33", muted: "#55616B", accent: "#E8837A", onAccent: "#1F2A33", line: "#BCCFC3", edge: "#2E6E5E" },
     displayFontVar: "var(--font-heritage-display)",
   },
 ];
