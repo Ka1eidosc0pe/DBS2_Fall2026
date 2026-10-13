@@ -447,7 +447,7 @@ export function UiStates() {
         <Block title="No results from a filter" note="Singlish headline, plain-language help, one clear way out.">
           {filters ? <NoResults onClear={() => setFilters(false)} /> : (
             <div className="grid place-items-center gap-3 py-10 text-center">
-              <p className="hb-body">Filters cleared. All 15 stalls are back.</p>
+              <p className="hb-body">Filters cleared. All 14 stalls are back.</p>
               <Button variant="ghost" onClick={() => setFilters(true)}>Reset the demo</Button>
             </div>
           )}
@@ -471,7 +471,7 @@ export function UiStates() {
             <ErrorState onRetry={retry} retrying={retrying} />
           ) : (
             <div className="grid place-items-center gap-3 py-10 text-center">
-              <p className="hb-body">Loaded. 15 stalls ready.</p>
+              <p className="hb-body">Loaded. 14 stalls ready.</p>
               <Button variant="ghost" onClick={() => setFailed(true)}>Reset the demo</Button>
             </div>
           )}

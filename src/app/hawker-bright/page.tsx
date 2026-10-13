@@ -1,3 +1,8 @@
+import type { Metadata } from "next";
+import { MakanMap } from "@/components/hawker-bright/MakanMap";
+
+export const metadata: Metadata = { title: "Makan Map · Hawker Bright" };
+
 export default function Page() {
-  return <main className="p-10 font-display text-4xl">hawker-bright site: in progress</main>;
+  return <MakanMap />;
 }
