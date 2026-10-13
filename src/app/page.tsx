@@ -85,7 +85,13 @@ function StyleCard({ style: s, index }: { style: StyleEntry; index: number }) {
           className="mt-12 text-[2.6rem] leading-[0.95] md:mt-16 md:text-[3.25rem]"
           style={{ fontFamily: s.displayFontVar, ...DISPLAY_TUNING[s.slug] }}
         >
-          {s.name}
+          {/* One word per line, so every card's title takes the same two lines */}
+          {s.name.split(" ").map((word, i) => (
+            <span key={word} className="block">
+              {i > 0 && <span className="sr-only"> </span>}
+              {word}
+            </span>
+          ))}
         </h2>
         <p className="mt-3 text-lg" style={{ fontFamily: s.displayFontVar, color: c.muted, ...TAGLINE_TUNING[s.slug] }}>
           {s.tagline}
