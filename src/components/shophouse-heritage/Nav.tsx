@@ -47,15 +47,15 @@ export function SiteNav({
   links: NavLink[];
   current: "site" | "moodboard" | "system";
   trailCount?: number;
-  onOpenTrail?: () => void;
+  onOpenTrail?: (el: HTMLElement) => void;
 }) {
   const [open, setOpen] = useState(false);
   return (
     <header className="sticky top-0 z-40 border-b border-line bg-bg/92 backdrop-blur supports-[backdrop-filter]:bg-bg/85">
-      <div className="mx-auto flex h-16 max-w-[84rem] items-center gap-4 px-5 md:px-10">
+      <div className="mx-auto flex h-16 max-w-[84rem] items-center gap-3 px-5 sm:gap-4 md:px-10">
         <Link href={`/${SLUG}/`} className="flex items-center gap-2.5 rounded-control" aria-label={`${title}, home`}>
           <TileMotif size={30} />
-          <span className="sh-title whitespace-nowrap text-[1.15rem] leading-none text-ink">{title}</span>
+          <span className="sh-title whitespace-nowrap text-[1.05rem] leading-none text-ink sm:text-[1.15rem]">{title}</span>
         </Link>
         <nav aria-label="Sections" className="ml-6 hidden items-center gap-1 lg:flex">
           {links.map((l) => (
@@ -69,13 +69,13 @@ export function SiteNav({
           {onOpenTrail && (
             <button
               type="button"
-              onClick={onOpenTrail}
+              onClick={(e) => onOpenTrail(e.currentTarget)}
               className="ml-2 inline-flex min-h-11 whitespace-nowrap items-center gap-2 rounded-control border border-brand px-3.5 text-sm font-semibold text-brand hover:bg-brand/10 md:min-h-10"
             >
               <RouteIcon size={18} strokeWidth={1.5} aria-hidden />
-              My trail
+              <span className="hidden sm:inline">My trail</span>
               <CountBadge count={trailCount ?? 0} />
-              <span className="sr-only">{trailCount ?? 0} stops</span>
+              <span className="sr-only">{`My trail, ${trailCount ?? 0} stops`}</span>
             </button>
           )}
           <button

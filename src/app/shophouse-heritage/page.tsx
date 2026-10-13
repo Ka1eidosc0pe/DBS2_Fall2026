@@ -1,3 +1,7 @@
+import { HeritageSite } from "@/components/shophouse-heritage/HeritageSite";
+
+export const metadata = { title: "The Heritage Trail · Walk the five-foot way" };
+
 export default function Page() {
-  return <main className="p-10 font-display text-4xl">shophouse-heritage site: in progress</main>;
+  return <HeritageSite />;
 }

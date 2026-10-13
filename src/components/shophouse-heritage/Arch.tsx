@@ -11,6 +11,7 @@ export function ArchFrame({
   arch = false,
   position = "center",
   reveal,
+  stretch,
   priority,
   credit = true,
   className,
@@ -23,6 +24,8 @@ export function ArchFrame({
   arch?: boolean;
   position?: string;
   reveal?: boolean;
+  /** grow to the height of the grid row (the box keeps its ratio as a minimum) */
+  stretch?: boolean;
   priority?: boolean;
   credit?: boolean;
   className?: string;
@@ -30,14 +33,14 @@ export function ArchFrame({
 }) {
   const c = creditFor(src);
   return (
-    <figure className={cx("m-0 flex flex-col", className)}>
+    <figure className={cx("m-0", stretch && "flex flex-col", className)}>
       <div
-        className={cx("relative w-full flex-1 overflow-hidden bg-surface-2", arch ? "rounded-t-[999px] rounded-b-card" : "rounded-card", reveal && "sh-reveal")}
+        className={cx("relative w-full overflow-hidden bg-surface-2", stretch && "flex-1", arch ? "rounded-t-[999px] rounded-b-card" : "rounded-card", reveal && "sh-reveal")}
         style={{ aspectRatio: ratio }}
       >
         <Image src={src} alt={alt} fill sizes={sizes} priority={priority} className={cx("object-cover", imgClassName)} style={{ objectPosition: position }} />
       </div>
-      {credit && c && <PhotoCredit src={src} className="mt-2" />}
+      {credit && c && <figcaption className="mt-2"><PhotoCredit src={src} /></figcaption>}
     </figure>
   );
 }
@@ -47,10 +50,10 @@ export function PhotoCredit({ src, className }: { src: string; className?: strin
   const c = creditFor(src);
   if (!c) return null;
   return (
-    <figcaption className={cx("text-[0.6875rem] leading-snug text-ink-muted", className)}>
+    <p className={cx("text-[0.6875rem] leading-snug text-ink-muted", className)}>
       <a href={c.source} target="_blank" rel="noreferrer" className="underline decoration-line-strong/30 underline-offset-2 hover:text-ink hover:decoration-brand">
         {c.author} · {c.license}
       </a>
-    </figcaption>
+    </p>
   );
 }

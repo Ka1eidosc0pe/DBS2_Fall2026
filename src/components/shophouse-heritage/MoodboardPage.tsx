@@ -28,6 +28,7 @@ function Shot({ s, sizes }: { s: Shot; sizes: string }) {
       arch={s.arch}
       position={s.pos}
       reveal={s.reveal}
+      stretch
       className={cx("h-full", s.span)}
     />
   );

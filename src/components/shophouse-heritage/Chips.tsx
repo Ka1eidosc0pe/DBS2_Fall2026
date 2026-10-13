@@ -79,7 +79,7 @@ export function Segmented<T extends string>({
       ref={ref}
       role="radiogroup"
       aria-label={label}
-      className={cx("inline-flex max-w-full rounded-control border border-ink-subtle bg-surface p-0.5", className)}
+      className={cx("inline-flex w-full max-w-full rounded-control border md:w-auto border-ink-subtle bg-surface p-0.5", className)}
       onKeyDown={(e) => {
         if (e.key === "ArrowRight" || e.key === "ArrowDown") { e.preventDefault(); move(1); }
         if (e.key === "ArrowLeft" || e.key === "ArrowUp") { e.preventDefault(); move(-1); }
@@ -100,7 +100,7 @@ export function Segmented<T extends string>({
             disabled={f === "disabled"}
             onClick={() => onChange?.(o.value)}
             className={cx(
-              "min-h-11 flex-1 whitespace-nowrap rounded-[4px] px-3.5 text-sm font-semibold transition-colors duration-200 disabled:cursor-not-allowed disabled:text-ink-muted data-[force=disabled]:cursor-not-allowed data-[force=disabled]:text-ink-muted md:min-h-9",
+              "min-h-11 flex-1 whitespace-nowrap rounded-[4px] px-2 text-[0.8125rem] sm:px-3.5 sm:text-sm font-semibold transition-colors duration-200 disabled:cursor-not-allowed disabled:text-ink-muted data-[force=disabled]:cursor-not-allowed data-[force=disabled]:text-ink-muted md:min-h-9",
               on
                 ? "bg-brand text-on-brand"
                 : "text-ink hover:bg-surface-2 data-[force=hover]:bg-surface-2 active:bg-line data-[force=active]:bg-line",

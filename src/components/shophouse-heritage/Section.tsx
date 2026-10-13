@@ -19,13 +19,13 @@ export function SectionHeading({
   className?: string;
 }) {
   return (
-    <header className={cx(align === "center" ? "mx-auto text-center" : "text-left", "max-w-2xl", className)}>
+    <header className={cx(align === "center" ? "mx-auto text-center" : "mx-auto text-center lg:mx-0 lg:text-left", "max-w-2xl", className)}>
       {eyebrow && <Eyebrow>{eyebrow}</Eyebrow>}
       <h2 id={id} className="sh-display mt-3 text-[2.5rem] leading-[1.05] text-ink md:text-[3.5rem]">
         {title}
       </h2>
       {children && <p className="mt-4 text-[1.0625rem] leading-relaxed text-ink-muted md:text-lg">{children}</p>}
-      <Rule className={cx("mt-6", align === "center" ? "mx-auto" : "")} />
+      <Rule className={cx("mt-6", align === "center" ? "mx-auto" : "mx-auto lg:mx-0")} />
     </header>
   );
 }

@@ -1,7 +1,7 @@
 "use client";
 import { Check, Clock, Plus } from "lucide-react";
 import { Button } from "./Button";
-import { ArchFrame } from "./Arch";
+import { ArchFrame, PhotoCredit } from "./Arch";
 import { Badge } from "./Feedback";
 import { DistrictDot } from "./Chips";
 import { TileBullet } from "./patterns";
@@ -54,14 +54,15 @@ export function LandmarkCard({
           src={landmark.image}
           alt={landmark.alt}
           sizes="(min-width: 1280px) 380px, (min-width: 768px) 45vw, 90vw"
-          ratio={featured ? "4 / 4.6" : "4 / 3.4"}
+          ratio="4 / 4.1"
           arch={featured}
           position={landmark.position}
           credit={false}
           imgClassName="transition-transform duration-500 ease-out group-hover/card:scale-[1.03]"
         />
       </button>
-      <div className="flex flex-1 flex-col px-1.5 pb-1.5 pt-4">
+      <PhotoCredit src={landmark.image} className="mt-1.5 px-1.5" />
+      <div className="flex flex-1 flex-col px-1.5 pb-1.5 pt-3.5">
         <div className="flex items-center justify-between gap-3">
           <DistrictLabel id={landmark.district} />
           <span className="sh-year text-lg leading-none text-ink-muted">{landmark.yearLabel}</span>
