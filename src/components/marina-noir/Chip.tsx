@@ -1,3 +1,5 @@
+"use client";
+
 import { Check } from "lucide-react";
 import { cx, FOCUS, T, type ForceState } from "./cx";
 

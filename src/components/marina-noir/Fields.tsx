@@ -292,7 +292,7 @@ export function Stepper({
   const step = (d: number) => onChange?.(Math.min(max, Math.max(min, (value ?? (d > 0 ? 1 : min + 1)) + d)));
   const disabled = forceState === "disabled";
   const btn = cx(
-    "grid size-12 shrink-0 cursor-pointer place-items-center text-ink",
+    "grid size-11 shrink-0 cursor-pointer place-items-center text-ink",
     "hover:bg-ink/[0.07] active:bg-ink/[0.14] data-[force=hover]:bg-ink/[0.07]",
     "disabled:cursor-not-allowed disabled:text-ink-subtle disabled:hover:bg-transparent",
     T,
@@ -306,7 +306,7 @@ export function Stepper({
       className={cx(
         "inline-flex w-fit items-stretch border border-(--control-line)",
         T,
-        "hover:border-ink-muted data-[force=hover]:border-ink-muted",
+        "hover:border-ink-muted data-[force=hover]:border-ink-muted data-[force=focus]:outline-2 data-[force=focus]:outline-offset-2 data-[force=focus]:outline-focus",
         (invalid || forceState === "error") && "border-danger hover:border-danger",
         disabled && "border-line",
       )}
@@ -314,7 +314,7 @@ export function Stepper({
       <button type="button" className={btn} data-force={forceState === "hover" ? "hover" : undefined} onClick={() => step(-1)} disabled={disabled || (value !== null && value <= min)} aria-label="Fewer guests">
         <Minus aria-hidden strokeWidth={1} className="size-[18px]" />
       </button>
-      <output aria-describedby={describedBy} className={cx("font-display grid min-w-16 place-items-center border-x border-line text-[1.75rem] leading-none tabular-nums", disabled && "text-ink-subtle", value === null && "text-ink-subtle")}>
+      <output aria-describedby={describedBy} className={cx("font-display grid min-w-12 place-items-center border-x border-line text-[1.75rem] leading-none tabular-nums", disabled && "text-ink-subtle", value === null && "text-ink-subtle")}>
         {value ?? "–"}
       </output>
       <button type="button" className={btn} onClick={() => step(1)} disabled={disabled || (value !== null && value >= max)} aria-label="More guests">

@@ -85,12 +85,10 @@ export function ExperienceDetail({
         <div className="mn-photo relative aspect-[16/10] w-full bg-surface-2 md:aspect-[16/9]">
           <Photo src={item.image} alt={item.imageAlt} sizes="(min-width: 768px) 620px, 100vw" position={item.position} />
           <div aria-hidden className="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent" />
+          <Credit file={item.image} className="absolute right-4 bottom-3 z-10" tone="text-ink/70" />
         </div>
         <div className="px-6 pb-10 md:px-10">
-          <div className="-mt-3 flex justify-end">
-            <Credit file={item.image} />
-          </div>
-          <div className="flex flex-wrap items-center gap-3">
+          <div className="flex flex-wrap items-center gap-3 pt-2">
             <Badge>{item.kind}</Badge>
             {item.blackTie && <Badge tone="brand">Black tie</Badge>}
             {existing && <Badge tone="success">Requested</Badge>}

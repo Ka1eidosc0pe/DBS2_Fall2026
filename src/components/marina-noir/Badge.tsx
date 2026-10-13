@@ -14,7 +14,7 @@ export function Badge({ tone = "neutral", className, children }: { tone?: Tone; 
   return (
     <span
       className={cx(
-        "mn-label inline-flex min-h-6 items-center gap-2 border px-2.5 py-0.5 text-[0.6875rem]",
+        "mn-label inline-flex min-h-6 whitespace-nowrap items-center gap-2 border px-2.5 py-0.5 text-[0.6875rem]",
         tone === "brand" ? "border-brand bg-brand text-on-brand" : "border-(--control-line) text-ink-muted",
         className,
       )}

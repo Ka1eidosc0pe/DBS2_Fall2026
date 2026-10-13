@@ -1,3 +1,5 @@
+"use client";
+
 import { ArrowRight } from "lucide-react";
 import type { Experience } from "@/data/marina-noir/experiences";
 import { Badge } from "./Badge";
