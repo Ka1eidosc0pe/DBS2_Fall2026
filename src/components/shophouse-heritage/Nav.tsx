@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import { useState } from "react";
-import { Menu, Route as RouteIcon, X } from "lucide-react";
+import { ArrowLeft, Menu, Route as RouteIcon, X } from "lucide-react";
 import { TileMotif } from "./patterns";
 import { CountBadge } from "./Feedback";
 import { cx } from "./cx";
@@ -12,13 +12,22 @@ export type NavLink = { href: string; label: string };
 
 export function CrossLinks({ current, className }: { current?: "site" | "moodboard" | "system"; className?: string }) {
   const items = [
-    { key: "hub", label: "Hub", href: "/" },
     { key: "moodboard", label: "Mood board", href: `/${SLUG}/moodboard/` },
     { key: "system", label: "Design system", href: `/${SLUG}/system/` },
     { key: "site", label: "Site", href: `/${SLUG}/` },
   ];
   return (
-    <nav aria-label="Project pages" className={cx("flex flex-wrap items-center gap-x-1 text-sm", className)}>
+    <nav aria-label="Project pages" className={cx("flex flex-wrap items-center text-sm", className)}>
+      {/* The way out: an outlined door, set well apart from this style's own pages */}
+      <Link
+        href="/"
+        aria-label="Leave Shophouse Heritage and return to the hub"
+        className="group inline-flex min-h-11 items-center gap-1.5 rounded-control border border-line-strong/30 px-3 font-semibold text-ink hover:border-brand hover:bg-brand/5 hover:text-brand md:min-h-8"
+      >
+        <ArrowLeft size={14} strokeWidth={1.75} aria-hidden className="transition-transform duration-300 group-hover:-translate-x-0.5" />
+        Hub
+      </Link>
+      <span aria-hidden className="mx-4 h-5 w-px bg-line md:mx-5" />
       {items.map((it, i) => (
         <span key={it.key} className="flex items-center gap-1">
           {i > 0 && <span aria-hidden className="text-ink-subtle">·</span>}

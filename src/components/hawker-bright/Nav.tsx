@@ -13,16 +13,26 @@ export const ROUTES = {
   system: "/hawker-bright/system/",
 };
 
-/** Small cross-links: Hub · Mood board · Design system · Site */
+/** Cross-links: a distinct way out to the hub, then Mood board · Design system · Site */
 export function CrossLinks({ current, className, onDark }: { current?: "site" | "moodboard" | "system"; className?: string; onDark?: boolean }) {
   const items = [
-    { k: "hub", href: ROUTES.hub, label: "Hub" },
     { k: "moodboard", href: ROUTES.moodboard, label: "Mood board" },
     { k: "system", href: ROUTES.system, label: "Design system" },
     { k: "site", href: ROUTES.site, label: "Site" },
   ];
   return (
-    <nav aria-label="Style pages" className={cn("flex flex-wrap items-center gap-x-1 gap-y-0.5", className)}>
+    <nav aria-label="Style pages" className={cn("flex flex-wrap items-center gap-y-0.5", className)}>
+      <Link
+        href={ROUTES.hub}
+        aria-label="Leave Hawker Bright and return to the hub"
+        className={cn(
+          "hb-focusable group my-1.5 inline-flex min-h-8 items-center gap-1.5 rounded-full border-2 px-3 text-[0.8125rem] font-bold transition-colors",
+          onDark ? "border-bg/60 !text-bg hover:border-bg hover:bg-bg hover:!text-ink !outline-white" : "border-ink hover:bg-ink hover:text-bg",
+        )}
+      >
+        <ArrowLeft size={13} strokeWidth={3} aria-hidden className="transition-transform group-hover:-translate-x-0.5" /> Hub
+      </Link>
+      <span aria-hidden className={cn("mx-4 h-5 w-0.5 rounded-full sm:mx-5", onDark ? "bg-bg/30" : "bg-ink/25")} />
       {items.map((it, i) => (
         <span key={it.k} className="flex items-center gap-1">
           {i > 0 ? <span aria-hidden className={onDark ? "text-white/50" : "text-ink-subtle"}>·</span> : null}
@@ -35,13 +45,7 @@ export function CrossLinks({ current, className, onDark }: { current?: "site" | 
               onDark && "!outline-white",
             )}
           >
-            {it.k === "hub" ? (
-              <span className="inline-flex items-center gap-1">
-                <ArrowLeft size={13} strokeWidth={3} aria-hidden /> {it.label}
-              </span>
-            ) : (
-              it.label
-            )}
+            {it.label}
           </Link>
         </span>
       ))}

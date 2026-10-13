@@ -1,6 +1,6 @@
 "use client";
 
-import { Menu, X } from "lucide-react";
+import { ArrowLeft, Menu, X } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
 import { cx, FOCUS, T } from "./cx";
@@ -10,31 +10,38 @@ export type NavItem = { label: string; href: string; current?: boolean };
 /** Utility strip on every page: the way back to the hub and across the three Marina Noir deliverables. */
 export function CrossLinks({ current, className }: { current?: "moodboard" | "system" | "site"; className?: string }) {
   const items = [
-    { key: "hub", label: "Hub", href: "/" },
     { key: "moodboard", label: "Mood board", href: "/marina-noir/moodboard/" },
     { key: "system", label: "Design system", href: "/marina-noir/system/" },
     { key: "site", label: "Site", href: "/marina-noir/" },
   ];
+  const link = "mn-label inline-flex min-h-11 items-center whitespace-nowrap text-[0.625rem] tracking-[0.08em] sm:tracking-[0.2em] md:min-h-9";
   return (
     <nav aria-label="Project" className={cx("border-b border-line bg-bg", className)}>
-      <ul className="mx-auto flex max-w-[1440px] items-center justify-start overflow-x-auto px-2 md:px-10">
-        {items.map((i, idx) => (
-          <li key={i.key} className="flex items-center">
-            {idx > 0 && <span aria-hidden className="size-1 rotate-45 bg-line-strong" />}
-            <Link
-              href={i.href}
-              aria-current={i.key === current ? "page" : undefined}
-              className={cx(
-                "mn-label inline-flex min-h-11 items-center px-2.5 text-[0.625rem] tracking-[0.14em] whitespace-nowrap text-ink-subtle sm:tracking-[0.2em] hover:text-ink aria-[current=page]:text-ink md:min-h-9 md:px-4",
-                T,
-                FOCUS,
-              )}
-            >
-              {i.label}
-            </Link>
-          </li>
-        ))}
-      </ul>
+      <div className="mx-auto flex max-w-[1440px] items-center justify-between gap-3 px-3 md:px-10">
+        {/* The way out: set apart from the style's own pages */}
+        <Link
+          href="/"
+          aria-label="Leave Marina Noir and return to the hub"
+          className={cx(link, "group my-1.5 !min-h-8 gap-1.5 border border-line-strong px-2.5 text-ink-muted sm:gap-2 sm:px-3 hover:border-ink hover:text-ink md:!min-h-7", T, FOCUS)}
+        >
+          <ArrowLeft aria-hidden strokeWidth={1} className="size-3.5 transition-transform duration-500 group-hover:-translate-x-1" />
+          Hub
+        </Link>
+        <ul className="flex items-center overflow-x-auto">
+          {items.map((i, idx) => (
+            <li key={i.key} className="flex items-center">
+              {idx > 0 && <span aria-hidden className="size-1 rotate-45 bg-line-strong" />}
+              <Link
+                href={i.href}
+                aria-current={i.key === current ? "page" : undefined}
+                className={cx(link, "px-1.5 text-ink-subtle hover:text-ink aria-[current=page]:text-ink sm:px-2.5 md:px-4", T, FOCUS)}
+              >
+                {i.label}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
     </nav>
   );
 }
