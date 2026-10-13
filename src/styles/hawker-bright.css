@@ -676,6 +676,7 @@
 
   /* ---------- Cards, badges ---------- */
   .hb-card {
+    color: var(--ink);
     background: var(--surface);
     border: 2px solid var(--ink);
     border-radius: var(--r-card);
@@ -942,6 +943,7 @@
     transform: rotateY(180deg);
   }
   .hb-flip-face {
+    color: var(--ink);
     position: absolute;
     inset: 0;
     backface-visibility: hidden;
