@@ -50,9 +50,9 @@ export const EXPERIENCES: Experience[] = [
     lastSeatingLabel: "8:30 pm",
     privacy: 4,
     seating: ["Table", "Private room"],
-    image: img("skyline-water"),
-    imageAlt: "The Marina Bay skyline at night, lit towers reflected in dark water",
-    position: "50% 60%",
+    image: img("mbs-dusk"),
+    imageAlt: "Marina Bay Sands at dusk, its three towers glowing across still water",
+    position: "50% 50%",
   },
   {
     id: "odette",
@@ -303,9 +303,9 @@ export const EXPERIENCES: Experience[] = [
     lastSeatingLabel: "7:00 pm",
     privacy: 5,
     seating: ["Private room"],
-    image: img("mbs-dusk"),
-    imageAlt: "Marina Bay Sands at dusk across still water, its windows glowing against a deep blue sky",
-    position: "50% 50%",
+    image: img("skyline-water"),
+    imageAlt: "Marina Bay's towers at night, reflected in the dark water of the bay",
+    position: "85% 75%",
   },
 ];
 

@@ -17,7 +17,7 @@ export function CrossLinks({ current, className }: { current?: "moodboard" | "sy
   ];
   return (
     <nav aria-label="Project" className={cx("border-b border-line bg-bg", className)}>
-      <ul className="mx-auto flex max-w-[1440px] flex-wrap items-center gap-x-1 px-3 md:px-10">
+      <ul className="mx-auto flex max-w-[1440px] items-center justify-start overflow-x-auto px-2 md:px-10">
         {items.map((i, idx) => (
           <li key={i.key} className="flex items-center">
             {idx > 0 && <span aria-hidden className="size-1 rotate-45 bg-line-strong" />}
@@ -25,7 +25,7 @@ export function CrossLinks({ current, className }: { current?: "moodboard" | "sy
               href={i.href}
               aria-current={i.key === current ? "page" : undefined}
               className={cx(
-                "mn-label inline-flex min-h-11 items-center px-3 text-[0.625rem] text-ink-subtle hover:text-ink aria-[current=page]:text-ink md:min-h-9 md:px-4",
+                "mn-label inline-flex min-h-11 items-center px-2.5 text-[0.625rem] tracking-[0.14em] whitespace-nowrap text-ink-subtle sm:tracking-[0.2em] hover:text-ink aria-[current=page]:text-ink md:min-h-9 md:px-4",
                 T,
                 FOCUS,
               )}
@@ -45,7 +45,7 @@ export function Wordmark({ className }: { className?: string }) {
       <span className="font-display text-[1.375rem] tracking-[-0.01em] italic" style={{ fontVariationSettings: '"opsz" 48' }}>
         The Concierge
       </span>
-      <span className="mn-label mt-1 text-[0.5625rem] text-ink-subtle">Singapore after dark</span>
+      <span className="mn-label mt-1 hidden text-[0.5625rem] text-ink-subtle sm:block">Singapore after dark</span>
     </Link>
   );
 }

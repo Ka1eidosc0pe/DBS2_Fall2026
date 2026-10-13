@@ -105,12 +105,12 @@ export default function Page() {
                   <span className="mn-title block text-[1.25rem]! italic">{p.name}</span>
                   <code className="mn-caption text-ink-subtle">{p.token}</code>
                 </span>
-                <span className="mn-label text-ink-muted tabular-nums">{(SWATCHES.find((s) => s.token === p.token)?.hex ?? STATUS.find((s) => s.token === p.token)?.hex ?? p.chip).toUpperCase()}</span>
-                <span className="mn-body text-ink-muted lg:text-[1rem]">{p.use}</span>
-                <span className="mn-caption text-ink-muted tabular-nums">
+                <span className="mn-label col-start-2 text-ink-muted tabular-nums lg:col-start-auto">{(SWATCHES.find((s) => s.token === p.token)?.hex ?? STATUS.find((s) => s.token === p.token)?.hex ?? p.chip).toUpperCase()}</span>
+                <span className="mn-body col-start-2 text-ink-muted lg:col-start-auto lg:text-[1rem]">{p.use}</span>
+                <span className="mn-caption col-start-2 text-ink-muted tabular-nums lg:col-start-auto">
                   {p.kind === "decor" ? `${ratio(p.fg, p.bg)} ${p.partner}` : `${ratio(p.fg, p.bg)} ${p.partner}`}
                 </span>
-                <span>
+                <span className="col-start-2 lg:col-start-auto">
                   <Badge tone={verdict(p.fg, p.bg, p.kind) === "Fails" ? "danger" : p.kind === "decor" ? "neutral" : "success"}>{verdict(p.fg, p.bg, p.kind)}</Badge>
                 </span>
               </div>
@@ -194,13 +194,13 @@ export default function Page() {
 
         {/* 3. SPACE AND SHAPE */}
         <Section id="space" n="03" title="Spacing and shape" note="Generous, on a 4px base. Square corners everywhere, one pill, and depth from surface steps rather than shadow.">
-          <div className="grid gap-x-16 gap-y-20 lg:grid-cols-2">
+          <div className="grid grid-cols-1 gap-x-16 gap-y-20 lg:grid-cols-2">
             <Block title="Spacing scale" note="px · Tailwind step">
               <ul className="grid gap-3">
                 {SPACING.map((s) => (
                   <li key={s} className="grid grid-cols-[4.5rem_1fr_4rem] items-center gap-4">
                     <span className="mn-label text-ink-muted tabular-nums">{s}px</span>
-                    <span className="h-3 bg-ink-muted/60" style={{ width: Math.min(s * 2.4, 384) }} />
+                    <span className="h-3 bg-ink-muted/60" style={{ width: s * 2.4, maxWidth: "100%" }} />
                     <span className="mn-caption text-ink-subtle tabular-nums">{s / 4}</span>
                   </li>
                 ))}

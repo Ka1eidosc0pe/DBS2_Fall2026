@@ -25,7 +25,7 @@ export function UiStates() {
     window.setTimeout(() => setRetry("ok"), 800);
   };
   return (
-    <div className="grid gap-x-10 gap-y-14 lg:grid-cols-2">
+    <div className="grid grid-cols-1 gap-x-10 gap-y-14 lg:grid-cols-2">
       <Frame title="Empty" note="Your evening, before any request">
         <EmptyState title="Nothing yet" actions={<Button variant="secondary">Browse the collection</Button>}>
           Requests you make will gather here, in the order you made them.

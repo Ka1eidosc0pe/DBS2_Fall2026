@@ -25,6 +25,8 @@ export function FanPattern({ className, size = 48 }: { className?: string; size?
   );
 }
 
+const r2 = (n: number) => Math.round(n * 100) / 100;
+
 /** A hairline sunburst: rays and two arcs. The hero ornament. */
 export function Sunburst({ className, rays = 36 }: { className?: string; rays?: number }) {
   const lines = Array.from({ length: rays + 1 }, (_, i) => {
@@ -34,7 +36,7 @@ export function Sunburst({ className, rays = 36 }: { className?: string; rays?: 
   return (
     <svg aria-hidden viewBox="0 0 400 204" className={cx("pointer-events-none", className)} fill="none" stroke="currentColor" strokeWidth="0.75">
       {lines.map((l, i) => (
-        <line key={i} x1={200 + (l.x - 200) * (l.long ? 0.16 : 0.34)} y1={200 + (l.y - 200) * (l.long ? 0.16 : 0.34)} x2={l.x} y2={l.y} />
+        <line key={i} x1={r2(200 + (l.x - 200) * (l.long ? 0.16 : 0.34))} y1={r2(200 + (l.y - 200) * (l.long ? 0.16 : 0.34))} x2={r2(l.x)} y2={r2(l.y)} />
       ))}
       <path d="M4 200 A196 196 0 0 1 396 200" />
       <path d="M44 200 A156 156 0 0 1 356 200" />

@@ -59,7 +59,7 @@ function Reveal({ children, className }: { children: React.ReactNode; className?
 
 /* Layout pattern for the asymmetric editorial grid, repeated: 7+5, then 4+4+4. */
 const SPANS = ["lg:col-span-7", "lg:col-span-5", "lg:col-span-4", "lg:col-span-4", "lg:col-span-4"];
-const CROPS = ["aspect-[4/3] lg:aspect-[7/5]", "aspect-[4/3] lg:aspect-[1/1]", "aspect-[4/3]", "aspect-[4/3]", "aspect-[4/3]"];
+const CROPS = ["aspect-[4/3] lg:aspect-auto lg:h-[540px]", "aspect-[4/3] lg:aspect-auto lg:h-[540px]", "aspect-[4/3]", "aspect-[4/3]", "aspect-[4/3]"];
 
 export function Concierge() {
   const [kind, setKind] = useState<Kind | "All">("All");
@@ -125,7 +125,7 @@ export function Concierge() {
             <button
               type="button"
               onClick={() => setEveningOpen(true)}
-              className={cx("mn-label inline-flex min-h-11 cursor-pointer items-center gap-3 border border-(--control-line) px-4 text-ink hover:border-ink hover:bg-ink/[0.07] active:bg-ink/[0.14]", T, "focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus")}
+              className={cx("mn-label inline-flex min-h-11 cursor-pointer items-center gap-3 whitespace-nowrap border border-(--control-line) px-3.5 text-ink hover:border-ink hover:bg-ink/[0.07] active:bg-ink/[0.14] sm:px-4", T, "focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus")}
             >
               Your evening
               {count > 0 && <CountBadge count={count} label={count === 1 ? "request" : "requests"} />}
@@ -137,11 +137,11 @@ export function Concierge() {
       <main>
         {/* HERO */}
         <section aria-labelledby="hero-h" className="relative isolate flex min-h-[calc(100svh-7rem)] items-end overflow-hidden border-b border-line-strong">
-          <div className="mn-photo absolute inset-0 -z-20">
+          <div className="mn-photo absolute inset-0 -z-20 [&_img]:!brightness-[1.3] [&_img]:!saturate-[0.9]">
             <Photo src={HERO} alt="Marina Bay's towers reflected in dark water at night" sizes="100vw" priority position="50% 62%" />
           </div>
-          <div aria-hidden className="absolute inset-0 -z-10 bg-gradient-to-t from-bg via-bg/55 to-bg/10" />
-          <div aria-hidden className="absolute inset-0 -z-10 bg-gradient-to-r from-bg/80 via-transparent to-transparent" />
+          <div aria-hidden className="absolute inset-0 -z-10 bg-gradient-to-t from-bg via-bg/55 to-transparent lg:via-bg/25" />
+          <div aria-hidden className="absolute inset-0 -z-10 bg-gradient-to-r from-bg/85 via-bg/30 to-transparent lg:via-bg/10" />
           <Sunburst className="absolute right-[-6rem] bottom-0 -z-10 hidden w-[620px] text-ink/25 lg:block" rays={42} />
           <div className="mx-auto w-full max-w-[1440px] px-5 pt-32 pb-14 md:px-10 lg:pb-24">
             <p className="mn-label mn-rise text-ink-muted">The Concierge · Singapore after dark</p>
@@ -210,14 +210,14 @@ export function Concierge() {
                   <Switch label="Black tie only" checked={blackTie} onCheckedChange={setBlackTie} />
                 </div>
               </div>
-              <div className="mt-6 grid gap-4 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-center sm:gap-8">
-                <SearchInput aria-label="Search the collection" placeholder="Search a place, a neighbourhood, a mood" value={query} onChange={(e) => setQuery(e.target.value)} onClear={() => setQuery("")} className="sm:max-w-md" />
-                <div className="flex items-center gap-4">
+              <div className="mt-6 grid grid-cols-[minmax(0,1fr)] gap-4 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-center sm:gap-8">
+                <SearchInput aria-label="Search the collection" placeholder="Search the collection" value={query} onChange={(e) => setQuery(e.target.value)} onClear={() => setQuery("")} className="sm:max-w-md" />
+                <div className="flex min-w-0 items-center gap-4">
                   <label htmlFor={`${uid}-sort`} className="mn-label shrink-0 text-ink-muted lg:hidden">Sort</label>
-                  <Select id={`${uid}-sort`} value={sort} onChange={(e) => setSort(e.target.value as Sort)} className="w-full sm:w-52 lg:hidden">
+                  <Select id={`${uid}-sort`} value={sort} onChange={(e) => setSort(e.target.value as Sort)} className="min-w-0 flex-1 sm:w-52 sm:flex-none lg:hidden">
                     {SORTS.map((s) => <option key={s.value} value={s.value}>{s.label}</option>)}
                   </Select>
-                  <Segmented label="Sort" value={sort} onChange={setSort} options={SORTS} className="hidden lg:inline-flex" />
+                  <Segmented label="Sort" value={sort} onChange={setSort} options={SORTS} className="max-lg:hidden" />
                 </div>
               </div>
             </div>
@@ -280,7 +280,7 @@ export function Concierge() {
               ].map((s) => {
                 const e = byId(s.id)!;
                 return (
-                  <li key={s.n} className="flex flex-col bg-brand p-8 lg:p-10">
+                  <li key={s.n} className="flex flex-col bg-brand p-6 sm:p-8 lg:p-10">
                     <span className="font-display text-[3.5rem] leading-none tabular-nums text-on-brand/60" style={{ fontVariationSettings: '"opsz" 96' }}>{s.n}</span>
                     <h3 className="mn-title mt-10 lg:text-[2rem]">{s.t}</h3>
                     <p className="mn-body mt-4 max-w-[34ch] text-on-brand/85">{s.b}</p>

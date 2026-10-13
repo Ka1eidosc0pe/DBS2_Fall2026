@@ -43,7 +43,7 @@ export function Components() {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="grid gap-x-12 gap-y-16 lg:grid-cols-2">
+    <div className="grid grid-cols-1 gap-x-12 gap-y-16 lg:grid-cols-2">
       <Spec title="Buttons" note="Gold only on the primary" className="lg:col-span-2">
         <div className="flex flex-wrap items-center gap-4">
           <Button variant="primary" icon={<ArrowRight aria-hidden strokeWidth={1} className="size-[18px]" />}>Request reservation</Button>
