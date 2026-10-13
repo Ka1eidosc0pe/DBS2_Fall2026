@@ -59,7 +59,7 @@ Screenshots each route at 390px and 1440px and flags horizontal overflow, consol
 
 ## Deploy
 
-Hosted on Vercel (project `dbs2-fall2026`) as a static export.
+Hosted on Vercel (project `dbs2-fall2026`) as a static export. Pushes to `main` on GitHub deploy automatically.
 
 ```bash
 npx vercel deploy --prod
