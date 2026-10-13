@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Marina Bay Sands: three flared towers under the cantilevered SkyPark, on Singapore red -->
+  <rect width="64" height="64" rx="14" fill="#E0242F"/>
+  <g fill="#fff">
+    <path d="M5.5 16.2c0-1.2 1-2.2 2.2-2.2H52c3.4 0 6.6.7 8.5 1.6l-.6 1.4c-2 .9-4.6 1.6-7.9 1.6H7.7a2.2 2.2 0 0 1-2.2-2.2Z"/>
+    <path d="M9 21h6.2c.4 9 1.6 21 3.3 31H9.5C9.3 42 9.1 31 9 21Z"/>
+    <path d="M22.4 21h6.2c.4 9 1.6 21 3.3 31h-9c-.2-10-.4-21-.5-31Z"/>
+    <path d="M35.8 21H42c.4 9 1.6 21 3.3 31h-9c-.2-10-.4-21-.5-31Z"/>
+  </g>
+  <path d="M8 56h48" stroke="#fff" stroke-width="2.2" stroke-linecap="round" opacity=".5"/>
+</svg>
