@@ -28,7 +28,9 @@ export default function Hub() {
           </p>
         </section>
 
-        <ul className="grid gap-5 lg:grid-cols-3" aria-label="Styles">
+        {/* At desktop each card is a subgrid over five shared rows, so header, title, palette,
+            description, and actions line up across cards whatever their lengths. */}
+        <ul className="grid gap-5 lg:grid-cols-3 lg:gap-y-0" aria-label="Styles">
           {STYLES.map((s, i) => (
             <StyleCard key={s.slug} style={s} index={i} />
           ))}
@@ -69,15 +71,16 @@ function StyleCard({ style: s, index }: { style: StyleEntry; index: number }) {
   return (
     <li
       data-style-card={s.slug}
-      className={`${fontVars.hub} relative z-20 flex flex-col overflow-hidden rounded-card ring-1 ring-black/10 transition-shadow duration-300 hover:shadow-[0_0_0_1.5px_var(--card-edge),0_28px_60px_-28px_rgb(0_0_0/0.45)] focus-within:shadow-[0_0_0_1.5px_var(--card-edge)]`}
+      className={`${fontVars.hub} relative z-20 flex flex-col overflow-hidden rounded-card lg:row-span-5 lg:grid lg:grid-rows-subgrid lg:p-8 ring-1 ring-black/10 transition-shadow duration-300 hover:shadow-[0_0_0_1.5px_var(--card-edge),0_28px_60px_-28px_rgb(0_0_0/0.45)] focus-within:shadow-[0_0_0_1.5px_var(--card-edge)]`}
       style={{ background: c.bg, color: c.ink, fontFamily: "var(--font-hub-sans)", ["--card-edge" as string]: c.edge }}
     >
-      <div className="flex flex-1 flex-col p-6 md:p-8">
+      <div className="flex flex-1 flex-col p-6 md:p-8 lg:contents">
         <div className="flex items-baseline justify-between text-xs" style={{ color: c.muted, fontFamily: "var(--font-hub-mono)" }}>
           <span>0{index + 1}</span>
           <span className="tracking-wider uppercase">{s.lens}</span>
         </div>
 
+        <div className="lg:self-end">
         <h2
           className="mt-12 text-[2.6rem] leading-[0.95] md:mt-16 md:text-[3.25rem]"
           style={{ fontFamily: s.displayFontVar, ...DISPLAY_TUNING[s.slug] }}
@@ -87,6 +90,7 @@ function StyleCard({ style: s, index }: { style: StyleEntry; index: number }) {
         <p className="mt-3 text-lg" style={{ fontFamily: s.displayFontVar, color: c.muted, ...TAGLINE_TUNING[s.slug] }}>
           {s.tagline}
         </p>
+        </div>
 
         <div className="mt-8 flex" aria-label={`${s.name} palette`} role="img">
           {s.swatches.map((sw, j) => (
