@@ -27,7 +27,7 @@ export function SystemPage() {
             Ornament, kept in order
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-[1.0625rem] leading-relaxed text-ink-muted md:text-lg">
-            Colour, type, space, components and states for a Singapore heritage guide. Pattern is the signature, framed by calm limewash space; coral is kept for the one action that matters.
+            Colour, type, space, components and states for a Singapore heritage guide. Pattern is the signature, framed by calm celadon space; coral is kept for the one action that matters.
           </p>
         </section>
         <TileBand height={56} />

@@ -9,32 +9,32 @@ import { Check, X } from "lucide-react";
 type Tok = { token: string; name: string; hex: string; use: string; partner: string; partnerLabel: string; large?: boolean };
 
 const SEMANTIC: Tok[] = [
-  { token: "bg", name: "Limewash", hex: "#F6F1E7", use: "The page. Warm, calm space around the pattern.", partner: "#1F2A33", partnerLabel: "ink" },
-  { token: "surface", name: "Porcelain", hex: "#FFFDF8", use: "Cards, inputs, drawers, the tile ground.", partner: "#1F2A33", partnerLabel: "ink" },
-  { token: "surface-2", name: "Plaster", hex: "#EDE4D3", use: "Quiet panels, hover fills, badges, skeletons.", partner: "#1F2A33", partnerLabel: "ink" },
-  { token: "ink", name: "Indigo ink", hex: "#1F2A33", use: "All primary text, strong rules, tooltips.", partner: "#F6F1E7", partnerLabel: "bg" },
-  { token: "ink-muted", name: "Slate", hex: "#5A6670", use: "Secondary text, captions, placeholder.", partner: "#F6F1E7", partnerLabel: "bg" },
-  { token: "ink-subtle", name: "Pewter", hex: "#7D8790", use: "Control borders and disabled marks. Never body text.", partner: "#FFFDF8", partnerLabel: "surface", large: true },
-  { token: "line", name: "Plaster line", hex: "#D8CDB8", use: "Hairline dividers and card edges. Decorative only.", partner: "#F6F1E7", partnerLabel: "bg", large: true },
-  { token: "brand", name: "Jade", hex: "#2E6E5E", use: "Headers, nav, selected chips, tile motifs, links on hover.", partner: "#FFFDF8", partnerLabel: "on-brand" },
-  { token: "focus", name: "Deep jade", hex: "#1F5F52", use: "The 2px focus ring, always offset 2px.", partner: "#F6F1E7", partnerLabel: "bg", large: true },
+  { token: "bg", name: "Celadon", hex: "#E3EDE6", use: "The page. Cool porcelain-jade space around the pattern.", partner: "#1F2A33", partnerLabel: "ink" },
+  { token: "surface", name: "Porcelain", hex: "#F7FAF7", use: "Cards, inputs, drawers: the white of the glaze.", partner: "#1F2A33", partnerLabel: "ink" },
+  { token: "surface-2", name: "Glaze", hex: "#D5E3DA", use: "Quiet panels, hover fills, badges, skeletons.", partner: "#1F2A33", partnerLabel: "ink" },
+  { token: "ink", name: "Indigo ink", hex: "#1F2A33", use: "All primary text, strong rules, tooltips.", partner: "#E3EDE6", partnerLabel: "bg" },
+  { token: "ink-muted", name: "Slate", hex: "#55616b", use: "Secondary text, captions, placeholder.", partner: "#E3EDE6", partnerLabel: "bg" },
+  { token: "ink-subtle", name: "Pewter", hex: "#6B7680", use: "Control borders and disabled marks. Never body text.", partner: "#F7FAF7", partnerLabel: "surface", large: true },
+  { token: "line", name: "Kiln line", hex: "#BCCFC3", use: "Hairline dividers and card edges. Decorative only.", partner: "#E3EDE6", partnerLabel: "bg", large: true },
+  { token: "brand", name: "Jade", hex: "#2E6E5E", use: "Headers, nav, selected chips, tile motifs, links on hover.", partner: "#F7FAF7", partnerLabel: "on-brand" },
+  { token: "focus", name: "Deep jade", hex: "#1F5F52", use: "The 2px focus ring, always offset 2px.", partner: "#E3EDE6", partnerLabel: "bg", large: true },
   { token: "accent", name: "Nyonya Coral", hex: "#E8837A", use: "The primary action only, and its direct echoes.", partner: "#1F2A33", partnerLabel: "on-accent" },
   { token: "accent-hover", name: "Coral, lifted", hex: "#EE978F", use: "Primary action on hover.", partner: "#1F2A33", partnerLabel: "on-accent" },
   { token: "accent-pressed", name: "Coral, pressed", hex: "#E07A71", use: "Primary action while pressed.", partner: "#1F2A33", partnerLabel: "on-accent" },
-  { token: "success", name: "Jade (success)", hex: "#2E6E5E", use: "Confirmation icons and borders.", partner: "#FFFDF8", partnerLabel: "surface" },
-  { token: "warning", name: "Burnt turmeric", hex: "#8F600F", use: "Cautions, never the only signal.", partner: "#FFFDF8", partnerLabel: "surface" },
-  { token: "danger", name: "Madder", hex: "#A8324A", use: "Errors and destructive actions.", partner: "#FFFDF8", partnerLabel: "surface" },
-  { token: "info", name: "Teal ink", hex: "#2B7B85", use: "Neutral notices.", partner: "#FFFDF8", partnerLabel: "surface" },
+  { token: "success", name: "Jade (success)", hex: "#2E6E5E", use: "Confirmation icons and borders.", partner: "#F7FAF7", partnerLabel: "surface" },
+  { token: "warning", name: "Burnt turmeric", hex: "#8F600F", use: "Cautions, never the only signal.", partner: "#F7FAF7", partnerLabel: "surface" },
+  { token: "danger", name: "Madder", hex: "#A8324A", use: "Errors and destructive actions.", partner: "#F7FAF7", partnerLabel: "surface" },
+  { token: "info", name: "Teal ink", hex: "#26707A", use: "Neutral notices.", partner: "#F7FAF7", partnerLabel: "surface" },
 ];
 
 const EXTRAS: Tok[] = [
-  { token: "peranakan-teal", name: "Peranakan Teal", hex: "#3A9CA6", use: "Tile petals, Kampong Glam.", partner: "#FFFDF8", partnerLabel: "surface", large: true },
+  { token: "peranakan-teal", name: "Peranakan Teal", hex: "#3A9CA6", use: "Tile petals, Kampong Glam.", partner: "#F7FAF7", partnerLabel: "surface", large: true },
   { token: "turmeric", name: "Turmeric", hex: "#D9A23B", use: "Tile hearts, Chinatown. Ink sits on it, never white.", partner: "#1F2A33", partnerLabel: "ink" },
-  { token: "indigo", name: "Batik Indigo", hex: "#2B3A67", use: "Tile corners, Little India.", partner: "#FFFDF8", partnerLabel: "surface" },
-  { token: "jade-deep", name: "Deep jade", hex: "#1F5F52", use: "Footer, Emerald Hill, selected hover.", partner: "#FFFDF8", partnerLabel: "surface" },
-  { token: "mangosteen", name: "Mangosteen", hex: "#7B3F68", use: "Joo Chiat.", partner: "#FFFDF8", partnerLabel: "surface" },
-  { token: "pandan", name: "Pandan", hex: "#66742C", use: "Civic District.", partner: "#FFFDF8", partnerLabel: "surface" },
-  { token: "terracotta", name: "Roof terracotta", hex: "#B0603A", use: "Clay roofs and warm accents.", partner: "#FFFDF8", partnerLabel: "surface" },
+  { token: "indigo", name: "Batik Indigo", hex: "#2B3A67", use: "Tile corners, Little India.", partner: "#F7FAF7", partnerLabel: "surface" },
+  { token: "jade-deep", name: "Deep jade", hex: "#1F5F52", use: "Footer, Emerald Hill, selected hover.", partner: "#F7FAF7", partnerLabel: "surface" },
+  { token: "mangosteen", name: "Mangosteen", hex: "#7B3F68", use: "Joo Chiat.", partner: "#F7FAF7", partnerLabel: "surface" },
+  { token: "pandan", name: "Pandan", hex: "#66742C", use: "Civic District.", partner: "#F7FAF7", partnerLabel: "surface" },
+  { token: "terracotta", name: "Roof terracotta", hex: "#B0603A", use: "Clay roofs and warm accents.", partner: "#F7FAF7", partnerLabel: "surface" },
 ];
 
 function Swatch({ t }: { t: Tok }) {

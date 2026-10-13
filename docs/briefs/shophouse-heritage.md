@@ -6,7 +6,7 @@
 
 ## Feeling
 
-Morning light on a row of Joo Chiat shophouses: pastel facades, carved timber, louvred windows, and **Peranakan majolica tiles** in jade, pink, and cobalt set into the walls. The cool shade of a five-foot way. Batik and kebaya embroidery. Nyonya porcelain (kamcheng) in pink and green. Hand-painted shop signboards in gold-on-black or red. Letterpress-printed museum labels. It feels **ornate but orderly, handmade, warm, and scholarly**, like a beautifully designed museum guide. Pattern is the signature, framed by calm limewash space.
+Morning light on a row of Joo Chiat shophouses: pastel facades, carved timber, louvred windows, and **Peranakan majolica tiles** in jade, pink, and cobalt set into the walls. The cool shade of a five-foot way. Batik and kebaya embroidery. Nyonya porcelain (kamcheng) in pink and green. Hand-painted shop signboards in gold-on-black or red. Letterpress-printed museum labels. It feels **ornate but orderly, handmade, warm, and scholarly**, like a beautifully designed museum guide. Pattern is the signature, framed by calm celadon space.
 
 Words: *ornamented, crafted, tiled, sun-faded, storied, symmetrical, curated.*
 Not: *sepia "old-timey" pastiche, Chinese-New-Year red-and-gold (that's Marina Noir's territory), dusty and dull, theme-park oriental.*
@@ -15,11 +15,11 @@ Not: *sepia "old-timey" pastiche, Chinese-New-Year red-and-gold (that's Marina N
 
 | Role | Name | Hex | Use |
 | --- | --- | --- | --- |
-| bg | Limewash | #F6F1E7 | Page |
-| surface / surface-2 | Porcelain / Plaster | #FFFDF8 / #EDE4D3 | Cards / panels |
+| bg | Celadon | #E3EDE6 | Page |
+| surface / surface-2 | Porcelain / Glaze | #F7FAF7 / #D5E3DA | Cards / panels |
 | ink | Indigo ink | #1F2A33 | Text |
-| ink-muted | Slate | #5A6670 | Secondary text |
-| line | Plaster line | #D8CDB8 | Dividers |
+| ink-muted | Slate | #55616b | Secondary text |
+| line | Kiln line | #BCCFC3 | Dividers |
 | brand | Jade | #2E6E5E | Headers, selected chips, nav, tile motifs |
 | extras | Peranakan Teal / Turmeric / Indigo / Deep jade | #3A9CA6 / #D9A23B / #2B3A67 / #1F5F52 | Tiles, district colours, era markers, timeline |
 | accent | Nyonya Coral | #E8837A | **Primary action only.** Indigo ink text on it. |

@@ -179,7 +179,7 @@ export function SpaceSection() {
       <Card title="Borders and elevation">
         <div className="grid gap-4 sm:grid-cols-2">
           <ul className="space-y-3 text-sm text-ink">
-            <li className="flex items-center gap-3"><span className="h-0 w-14 border-t border-line" />1px plaster line: dividers, cards</li>
+            <li className="flex items-center gap-3"><span className="h-0 w-14 border-t border-line" />1px kiln line: dividers, cards</li>
             <li className="flex items-center gap-3"><span className="h-0 w-14 border-t border-ink-subtle" />1px pewter: control edges (3.6:1)</li>
             <li className="flex items-center gap-3"><span className="h-0 w-14 border-t border-ink" />1px ink: drawers, toasts</li>
             <li className="flex items-center gap-3"><span className="h-0 w-14 border-t-2 border-focus" />2px deep jade: focus, offset 2px</li>
@@ -227,7 +227,7 @@ export function SpaceSection() {
           <div className="h-24 overflow-hidden rounded-card border border-line bg-surface-2 text-brand"><GrillePattern tile={32} /></div>
           <div className="h-24 overflow-hidden rounded-card border border-line bg-surface-2 text-(--jade-deep)"><BatikPattern tile={36} /></div>
         </div>
-        <p className="mt-3 text-sm text-ink-muted">Tile · band · ventilation grille · batik kawung. Pattern is the frame; the page stays limewash.</p>
+        <p className="mt-3 text-sm text-ink-muted">Tile · band · ventilation grille · batik kawung. Pattern is the frame; the page stays celadon.</p>
       </Card>
     </div>
   );

@@ -53,11 +53,11 @@ const BOARD_B: Shot[] = [
 ];
 
 const PALETTE = [
-  { name: "Limewash", hex: "#F6F1E7", note: "the wall in morning light", dark: false },
-  { name: "Porcelain", hex: "#FFFDF8", note: "a kamcheng's glaze", dark: false },
-  { name: "Plaster", hex: "#EDE4D3", note: "old render, sun-faded", dark: false },
+  { name: "Celadon", hex: "#E3EDE6", note: "pale jade shophouse fronts, Straits ware", dark: false },
+  { name: "Porcelain", hex: "#F7FAF7", note: "a kamcheng's white glaze", dark: false },
+  { name: "Glaze", hex: "#D5E3DA", note: "pooled celadon, sun-faded render", dark: false },
   { name: "Indigo ink", hex: "#1F2A33", note: "letterpress black", dark: true },
-  { name: "Slate", hex: "#5A6670", note: "monsoon cloud", dark: true },
+  { name: "Slate", hex: "#55616b", note: "monsoon cloud", dark: true },
   { name: "Jade", hex: "#2E6E5E", note: "glazed roof ridges", dark: true },
   { name: "Peranakan Teal", hex: "#3A9CA6", note: "the tile's turquoise", dark: false },
   { name: "Turmeric", hex: "#D9A23B", note: "kunyit, rubbed on thumbs", dark: false },
@@ -81,7 +81,7 @@ const REFS = [
 ];
 
 const DIRECTION = [
-  "Daylight, early or soft. The wall should feel warm, never hard.",
+  "Daylight, early or soft. The wall should glow, never glare.",
   "Frontal or symmetric, with clean verticals. Shoot straight on, not up.",
   "Crop to ornament: the tile, the shutter, the roof ridge. Detail earns its keep.",
   "Colour left true. No HDR, no heavy grading, no teal-and-orange.",
@@ -89,7 +89,7 @@ const DIRECTION = [
   "Frame in arches where it helps: the window is the proportion.",
 ];
 
-const THIS = ["Pastel facades with tile and carved timber", "Fraunces with soft, wonky character", "One tile pattern, used as a signature", "Coral for one action only", "Calm limewash around the ornament"];
+const THIS = ["Pastel facades with tile and carved timber", "Fraunces with soft, wonky character", "One tile pattern, used as a signature", "Coral for one action only", "Calm celadon around the ornament"];
 const NOT = ["Sepia 'old-timey' filters", "Red-and-gold lanterns and dragons", "Dusty, brown, museum-dim UI", "Pattern behind body text", "Theme-park oriental"];
 
 export function MoodboardPage() {
@@ -136,7 +136,7 @@ export function MoodboardPage() {
             </SectionHeading>
             <ul className="mt-12 grid grid-cols-2 gap-3 md:mt-16 md:grid-cols-4 md:gap-4 lg:grid-cols-7">
               {PALETTE.map((c) => (
-                <li key={c.name} className="overflow-hidden rounded-card border border-ink/10 bg-surface">
+                <li key={c.name} className="overflow-hidden rounded-card border border-ink/15 bg-surface">
                   <div className="h-28 md:h-36" style={{ background: c.hex }} />
                   <div className="p-3.5">
                     <p className="sh-title text-[1.0625rem] leading-tight text-ink">{c.name}</p>
