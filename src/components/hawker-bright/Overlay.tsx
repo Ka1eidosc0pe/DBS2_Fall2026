@@ -88,7 +88,7 @@ export function Drawer({
       <header className="flex items-center gap-3 border-b-2 border-ink px-5 py-3.5" style={{ background: tone, color: onTone }}>
         <div className="min-w-0 flex-1">
           {eyebrow ? <div className="hb-mono opacity-90">{eyebrow}</div> : null}
-          <h2 id={titleId} className="hb-title line-clamp-2 !text-[1.65rem] uppercase !leading-[0.95]">
+          <h2 id={titleId} className="hb-title line-clamp-2 !text-[1.9rem] uppercase !leading-[0.95]">
             {title}
           </h2>
         </div>
@@ -150,7 +150,7 @@ export function ToastProvider({ children }: { children: ReactNode }) {
   return (
     <ToastCtx.Provider value={{ push }}>
       {children}
-      <div aria-live="polite" role="status" className="pointer-events-none fixed inset-x-3 bottom-3 z-[80] flex flex-col items-center gap-2 md:inset-x-auto md:right-6 md:bottom-6 md:items-end">
+      <div aria-live="polite" role="status" className="pointer-events-none fixed inset-x-3 top-3 z-[80] flex flex-col items-center gap-2 md:inset-x-auto md:bottom-6 md:left-6 md:top-auto md:items-start">
         {items.map((t) => (
           <div key={t.id} className="pointer-events-auto w-full max-w-sm">
             <ToastView kind={t.kind} message={t.message} onClose={() => setItems((s) => s.filter((x) => x.id !== t.id))} />

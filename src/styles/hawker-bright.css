@@ -642,6 +642,12 @@
       background-color var(--dur-fast) ease,
       transform var(--dur-fast) var(--ease-spring);
   }
+  @media (max-width: 480px) {
+    .hb-seg-item {
+      padding: 0 0.62rem;
+      font-size: 0.8125rem;
+    }
+  }
   .hb-seg-item:hover,
   .hb-seg-item[data-force="hover"] {
     background: var(--hdb-butter);

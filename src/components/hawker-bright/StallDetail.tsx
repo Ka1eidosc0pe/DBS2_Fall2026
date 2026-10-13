@@ -74,7 +74,7 @@ export function StallDetail({
         <Photo file={stall.photo} alt={stall.alt} sizes="(min-width:768px) 520px, 100vw" focus={stall.focus} />
         <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink/80 to-transparent px-4 pb-2 pt-8">
           <CreditLine file={stall.photo} onDark className="!text-[11px]" />
-          {!stall.photoIsDish ? <span className="hb-caption ml-2 !text-[11px] text-white/80">· photo of the centre</span> : null}
+          {!stall.photoIsDish ? <span className="hb-caption ml-2 !text-[11px] text-white/80">· illustrative photo</span> : null}
         </div>
       </div>
       <div className="px-5 pb-6 pt-5">

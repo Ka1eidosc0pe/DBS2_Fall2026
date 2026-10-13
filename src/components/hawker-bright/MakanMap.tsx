@@ -219,7 +219,7 @@ function Site() {
             </div>
 
             {/* Filter board */}
-            <div className="hb-card mt-8 grid gap-5 p-4 sm:p-5">
+            <div className="hb-card mt-8 grid grid-cols-[minmax(0,1fr)] gap-5 p-4 sm:p-5">
               <div className="grid gap-4 md:grid-cols-[1.4fr_1fr] lg:grid-cols-[1.5fr_1fr_auto_auto] lg:items-end">
                 <div>
                   <label htmlFor="q" className="hb-label mb-2 block">
@@ -233,8 +233,10 @@ function Site() {
                   onChange={(e) => setHood(e.target.value as "all" | Hood)}
                   options={[{ value: "all", label: "All neighbourhoods" }, ...HOODS.map((h) => ({ value: h, label: h }))]}
                 />
-                <Switch label="Halal" checked={halal} onChange={(e) => setHalal(e.target.checked)} />
-                <Switch label="Vegetarian-friendly" checked={veg} onChange={(e) => setVeg(e.target.checked)} />
+                <div className="flex flex-wrap items-center gap-x-6 gap-y-1 md:col-span-2 lg:contents">
+                  <Switch label="Halal" checked={halal} onChange={(e) => setHalal(e.target.checked)} />
+                  <Switch label="Vegetarian-friendly" checked={veg} onChange={(e) => setVeg(e.target.checked)} />
+                </div>
               </div>
               <div className="flex flex-wrap items-center gap-3 border-t-2 border-dashed border-line pt-4">
                 <span className="hb-label mr-1">Dish type</span>
@@ -305,7 +307,7 @@ function Site() {
             </div>
             <figure className="relative m-0 mx-auto w-full max-w-[460px]">
               <PhotoSticker file={PHOTOS.kaya.file} alt={PHOTOS.kaya.alt} sizes="460px" tilt={2.5} aspect="4/3" />
-              <ChopeSticker className="absolute -right-4 -top-8 w-[120px] rotate-6 drop-shadow-[3px_3px_0_#2b1d14]" />
+              <ChopeSticker className="absolute right-0 -top-8 w-[120px] sm:-right-4 rotate-6 drop-shadow-[3px_3px_0_#2b1d14]" />
             </figure>
           </div>
         </section>

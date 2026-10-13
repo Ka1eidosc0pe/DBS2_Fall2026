@@ -31,7 +31,7 @@ export function StallCard({
       aria-label={`${stall.dish} at ${stall.centre}. Open stall details.${listed ? " On your makan list." : ""}`}
       className={cn("hb-card hb-card-link hb-lift hb-focusable group flex h-full flex-col !p-0 disabled:cursor-not-allowed disabled:opacity-60 disabled:grayscale", className)}
     >
-      <div className="relative aspect-[4/3] w-full overflow-hidden border-b-2 border-ink" style={{ background: "var(--surface-2)" }}>
+      <div className="relative aspect-[16/10] w-full sm:aspect-[4/3] overflow-hidden border-b-2 border-ink" style={{ background: "var(--surface-2)" }}>
         <Photo file={stall.photo} alt="" sizes="(min-width:1024px) 380px, (min-width:640px) 45vw, 92vw" focus={stall.focus} priority={priority} className="transition-transform duration-300 group-hover:scale-105 group-data-[force=hover]:scale-105" />
         <StallBadge no={stall.unit} className="absolute left-3 top-3 shadow-[2px_2px_0_var(--ink)]" />
         {listed ? (
