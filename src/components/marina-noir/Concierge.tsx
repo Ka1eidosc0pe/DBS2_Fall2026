@@ -118,8 +118,6 @@ export function Concierge() {
           items={[
             { label: "Experiences", href: "#collection" },
             { label: "Three nights", href: "#nights" },
-            { label: "Mood board", href: "/marina-noir/moodboard/" },
-            { label: "Design system", href: "/marina-noir/system/" },
           ]}
           end={
             <button
@@ -141,14 +139,14 @@ export function Concierge() {
             <Photo src={HERO} alt="Marina Bay's towers reflected in dark water at night" sizes="100vw" priority position="50% 62%" />
           </div>
           <div aria-hidden className="absolute inset-0 -z-10 bg-gradient-to-t from-bg via-bg/55 to-transparent lg:via-bg/25" />
-          <div aria-hidden className="absolute inset-0 -z-10 bg-gradient-to-r from-bg/85 via-bg/30 to-transparent lg:via-bg/10" />
+          <div aria-hidden className="absolute inset-0 -z-10 bg-gradient-to-r from-bg/85 via-bg/30 to-transparent lg:from-bg lg:via-bg/80 lg:via-35% lg:to-transparent lg:to-70%" />
           <Sunburst className="absolute right-[-6rem] bottom-0 -z-10 hidden w-[620px] text-ink/25 lg:block" rays={42} />
           <div className="mx-auto w-full max-w-[1440px] px-5 pt-32 pb-14 md:px-10 lg:pb-24">
             <p className="mn-label mn-rise text-ink-muted">The Concierge · Singapore after dark</p>
             <h1 id="hero-h" className="mn-display mn-rise mt-6 max-w-[11ch] lg:text-[7.5rem]" style={{ ["--d" as string]: "120ms" }}>
               After dark, <span className="mn-italic">by invitation.</span>
             </h1>
-            <p className="mn-lead mn-rise mt-7 max-w-[40ch] text-ink-muted" style={{ ["--d" as string]: "260ms" }}>
+            <p className="mn-lead mn-rise mt-7 max-w-[40ch] text-ink-muted lg:text-ink/85" style={{ ["--d" as string]: "260ms" }}>
               A private guide to twelve evenings in Marina Bay and beyond: the chef&rsquo;s counter, the rooftop, the suite with the view.
             </p>
             <div className="mn-rise mt-10 flex flex-wrap items-center gap-x-8 gap-y-4" style={{ ["--d" as string]: "400ms" }}>
