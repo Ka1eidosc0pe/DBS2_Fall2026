@@ -145,8 +145,8 @@ export function HeritageSite() {
               A self-guided walk through the old quarters
             </p>
             <h1 className="sh-display mt-5 text-[2.9rem] leading-[1] text-ink md:text-[5.5rem]">Walk the five-foot way</h1>
-            <p className="mx-auto mt-6 max-w-2xl text-[1.0625rem] leading-relaxed text-ink-muted md:text-xl md:leading-relaxed">
-              {LANDMARKS.length} landmarks in Chinatown, Kampong Glam, Little India, Joo Chiat and the Civic District, linked by streets where the shade runs the length of the row.
+            <p className="mx-auto mt-6 max-w-2xl text-[1.0625rem] leading-relaxed text-balance text-ink-muted md:text-xl md:leading-relaxed">
+              {LANDMARKS.length} landmarks across Chinatown, Kampong Glam, Little India, Joo Chiat, Emerald Hill and the Civic District, linked by streets where the shade runs the length of the row.
             </p>
             <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
               <Button className="min-w-48 px-7" onClick={() => scrollTo("landmarks")}>Start your trail</Button>
