@@ -8,6 +8,8 @@ A travel guide to Singapore designed in three visual styles. Each has a mood boa
 | **Hawker Bright** | Everyday Singapore: kopi, pandan, HDB pastels | *Makan Map*, eat like a local |
 | **Shophouse Heritage** | Historic Singapore: Peranakan jade, teal, coral | *The Heritage Trail*, a self-guided walk |
 
+**Live:** https://dbs2-fall2026.vercel.app
+
 Creative briefs live in `docs/briefs/`, and build rules in `docs/conventions.md`.
 
 ## Deliverables
@@ -54,3 +56,13 @@ node scripts/shoot.mjs / /hawker-bright/ --out .shots
 ```
 
 Screenshots each route at 390px and 1440px and flags horizontal overflow, console errors, and failed requests.
+
+## Deploy
+
+Hosted on Vercel (project `dbs2-fall2026`) as a static export.
+
+```bash
+npx vercel deploy --prod
+```
+
+Check the live site at both widths with `node scripts/shoot.mjs --base https://dbs2-fall2026.vercel.app / ...`.

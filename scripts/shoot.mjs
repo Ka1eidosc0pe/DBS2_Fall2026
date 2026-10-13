@@ -33,7 +33,8 @@ for (const route of routes) {
     const errors = [];
     page.on("console", (m) => m.type() === "error" && errors.push(m.text()));
     page.on("pageerror", (e) => errors.push(String(e)));
-    page.on("requestfailed", (r) => errors.push(`request failed: ${r.url()}`));
+    // Aborted requests are cancelled link prefetches when the page closes, not real failures.
+    page.on("requestfailed", (r) => !/ERR_ABORTED/.test(r.failure()?.errorText ?? "") && errors.push(`request failed: ${r.url()}`));
     page.on("response", (r) => r.status() >= 400 && errors.push(`${r.status()} ${r.url()}`));
 
     await page.goto(base + route, { waitUntil: "networkidle" });
