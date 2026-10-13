@@ -28,3 +28,69 @@
   --elev-card: 0 1px 2px rgb(0 0 0 / 0.06);
   --elev-raised: 0 12px 32px -12px rgb(0 0 0 / 0.25);
 }
+
+/* ---------- Hub flood ----------
+   Each style's copy of the hub (see HubFlood.tsx). Locked sections keep the base
+   layer's height so the re-typeset copy stays aligned with the real page; the
+   cards themselves always come from the base layer, above the flood. */
+.hub-flood [data-style-card] {
+  visibility: hidden;
+}
+.hub-flood [data-lock="header"] { height: var(--lock-header); }
+.hub-flood [data-lock="hero"] { height: var(--lock-hero); }
+.hub-flood [data-lock="process"] { height: var(--lock-process); }
+.hub-flood [data-lock="footer"] { height: var(--lock-footer); }
+.hub-flood[data-theme] {
+  min-height: 0;
+}
+
+/* Marina Noir: onyx with an oxblood glow, Bodoni in high contrast */
+.hub-flood[data-theme="marina-noir"] {
+  background:
+    radial-gradient(ellipse 70% 50% at 75% 0%, rgb(110 20 35 / 0.45), transparent 70%),
+    radial-gradient(ellipse 50% 40% at 0% 100%, rgb(163 23 43 / 0.18), transparent 70%),
+    var(--bg);
+}
+.hub-flood[data-theme="marina-noir"] h1 {
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  font-variation-settings: "opsz" 96;
+}
+.hub-flood[data-theme="marina-noir"] h3,
+.hub-flood[data-theme="marina-noir"] header .font-display {
+  font-weight: 500;
+  font-style: italic;
+  letter-spacing: 0;
+}
+
+/* Hawker Bright: kopi-si cream with Formica speckle, condensed signage caps */
+.hub-flood[data-theme="hawker-bright"] {
+  background:
+    radial-gradient(circle at 3px 3px, rgb(43 29 20 / 0.13) 1.2px, transparent 1.8px) 0 0 / 17px 17px,
+    radial-gradient(circle at 11px 9px, rgb(242 107 42 / 0.12) 1.4px, transparent 2px) 0 0 / 23px 23px,
+    var(--bg);
+}
+.hub-flood[data-theme="hawker-bright"] h1,
+.hub-flood[data-theme="hawker-bright"] h3,
+.hub-flood[data-theme="hawker-bright"] header .font-display {
+  font-weight: 850;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  font-variation-settings: "wdth" 72;
+}
+.hub-flood[data-theme="hawker-bright"] h1 { line-height: 0.92; }
+
+/* Shophouse Heritage: limewash with a faint tile lattice, soft wonky Fraunces */
+.hub-flood[data-theme="shophouse-heritage"] {
+  background:
+    repeating-linear-gradient(45deg, rgb(46 110 94 / 0.06) 0 1px, transparent 1px 26px),
+    repeating-linear-gradient(-45deg, rgb(58 156 166 / 0.06) 0 1px, transparent 1px 26px),
+    var(--bg);
+}
+.hub-flood[data-theme="shophouse-heritage"] h1,
+.hub-flood[data-theme="shophouse-heritage"] h3,
+.hub-flood[data-theme="shophouse-heritage"] header .font-display {
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  font-variation-settings: "SOFT" 100, "WONK" 1, "opsz" 144;
+}

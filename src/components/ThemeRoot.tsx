@@ -7,13 +7,14 @@ export function ThemeRoot({
   theme,
   className = "",
   children,
+  ...rest
 }: {
   theme: Theme;
   className?: string;
   children: React.ReactNode;
-}) {
+} & Omit<React.HTMLAttributes<HTMLDivElement>, "className" | "children">) {
   return (
-    <div data-theme={theme} className={`${fontVars[theme]} ${className}`}>
+    <div data-theme={theme} className={`${fontVars[theme]} ${className}`} {...rest}>
       {children}
     </div>
   );

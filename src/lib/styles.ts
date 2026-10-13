@@ -11,8 +11,8 @@ export type StyleEntry = {
   siteName: string;
   /** Swatches shown on the hub card, in order of prominence. The last one is the accent. */
   swatches: { name: string; hex: string }[];
-  /** Colors for rendering the hub card in the style's own palette. */
-  card: { bg: string; ink: string; muted: string; accent: string; onAccent: string; line: string };
+  /** Colors for rendering the hub card in the style's own palette. `edge` outlines the card while its style floods the hub, so it stays distinct from its own flood. */
+  card: { bg: string; ink: string; muted: string; accent: string; onAccent: string; line: string; edge: string };
   displayFontVar: string;
 };
 
@@ -32,7 +32,7 @@ export const STYLES: StyleEntry[] = [
       { name: "Ivory", hex: "#F3EDE4" },
       { name: "Champagne", hex: "#D4B67A" },
     ],
-    card: { bg: "#0B0A0A", ink: "#F3EDE4", muted: "#A89F94", accent: "#D4B67A", onAccent: "#0B0A0A", line: "#2E2926" },
+    card: { bg: "#0B0A0A", ink: "#F3EDE4", muted: "#A89F94", accent: "#D4B67A", onAccent: "#0B0A0A", line: "#2E2926", edge: "#4A403A" },
     displayFontVar: "var(--font-noir-display)",
   },
   {
@@ -50,7 +50,7 @@ export const STYLES: StyleEntry[] = [
       { name: "HDB Mint", hex: "#BFE3D0" },
       { name: "Sambal", hex: "#F26B2A" },
     ],
-    card: { bg: "#FBF5EA", ink: "#2B1D14", muted: "#6B5646", accent: "#F26B2A", onAccent: "#2B1D14", line: "#2B1D14" },
+    card: { bg: "#FBF5EA", ink: "#2B1D14", muted: "#6B5646", accent: "#F26B2A", onAccent: "#2B1D14", line: "#2B1D14", edge: "#2B1D14" },
     displayFontVar: "var(--font-hawker-display)",
   },
   {
@@ -68,7 +68,7 @@ export const STYLES: StyleEntry[] = [
       { name: "Turmeric", hex: "#D9A23B" },
       { name: "Nyonya Coral", hex: "#E8837A" },
     ],
-    card: { bg: "#F6F1E7", ink: "#1F2A33", muted: "#5A6670", accent: "#E8837A", onAccent: "#1F2A33", line: "#D8CDB8" },
+    card: { bg: "#F6F1E7", ink: "#1F2A33", muted: "#5A6670", accent: "#E8837A", onAccent: "#1F2A33", line: "#D8CDB8", edge: "#2E6E5E" },
     displayFontVar: "var(--font-heritage-display)",
   },
 ];

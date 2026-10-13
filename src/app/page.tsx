@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { ThemeRoot } from "@/components/ThemeRoot";
-import { displayVars } from "@/lib/fonts";
+import { HubFlood } from "@/components/HubFlood";
+import { fontVars } from "@/lib/fonts";
 import { STYLES, href, type StyleEntry } from "@/lib/styles";
 
 const STEPS = [
@@ -11,15 +11,15 @@ const STEPS = [
 
 export default function Hub() {
   return (
-    <ThemeRoot theme="hub" className={displayVars}>
-      <header className="mx-auto flex max-w-[1280px] items-center justify-between gap-4 px-5 pt-6 md:px-10 md:pt-8">
-        <p className="text-sm font-semibold tracking-tight">Singapore, Three Ways</p>
+    <HubFlood>
+      <header data-lock="header" className="mx-auto flex max-w-[1280px] items-center justify-between gap-4 px-5 pt-6 md:px-10 md:pt-8">
+        <p className="font-display text-sm font-semibold tracking-tight">Singapore, Three Ways</p>
         <p className="hidden font-mono text-xs text-ink-muted sm:block">Design, Build, Ship · Project 2</p>
       </header>
 
       <main className="mx-auto max-w-[1280px] px-5 pb-20 md:px-10">
-        <section className="grid gap-6 py-14 md:grid-cols-[1.4fr_1fr] md:items-end md:py-24">
-          <h1 className="text-[2.75rem] leading-[1.02] font-semibold tracking-[-0.035em] text-balance md:text-[5.25rem]">
+        <section data-lock="hero" className="grid gap-6 py-14 md:grid-cols-[1.4fr_1fr] md:items-end md:py-24">
+          <h1 className="font-display text-[2.75rem] leading-[1.02] font-semibold tracking-[-0.035em] text-balance md:text-[5.25rem]">
             One city. Three visual styles.
           </h1>
           <p className="max-w-md text-lg leading-relaxed text-pretty text-ink-muted">
@@ -34,7 +34,7 @@ export default function Hub() {
           ))}
         </ul>
 
-        <section aria-labelledby="process" className="mt-20 border-t border-line pt-10 md:mt-28">
+        <section data-lock="process" aria-labelledby="process" className="mt-20 border-t border-line pt-10 md:mt-28">
           <h2 id="process" className="font-mono text-xs tracking-wider text-ink-muted uppercase">
             Per style
           </h2>
@@ -43,7 +43,7 @@ export default function Hub() {
               <li key={step.n} className="flex gap-4">
                 <span className="font-mono text-sm text-ink-subtle">{step.n}</span>
                 <div>
-                  <h3 className="font-semibold">{step.title}</h3>
+                  <h3 className="font-display font-semibold">{step.title}</h3>
                   <p className="mt-1 text-sm leading-relaxed text-ink-muted">{step.body}</p>
                 </div>
               </li>
@@ -52,7 +52,7 @@ export default function Hub() {
         </section>
       </main>
 
-      <footer className="mx-auto max-w-[1280px] px-5 md:px-10">
+      <footer data-lock="footer" className="mx-auto max-w-[1280px] px-5 md:px-10">
         <div className="flex flex-wrap items-center justify-between gap-3 border-t border-line py-8 text-sm text-ink-muted">
         <p>Static site. Next.js and Tailwind CSS. No accounts, no tracking.</p>
         <Link href="/credits/" className="underline decoration-line underline-offset-4 hover:text-ink hover:decoration-ink">
@@ -60,7 +60,7 @@ export default function Hub() {
         </Link>
         </div>
       </footer>
-    </ThemeRoot>
+    </HubFlood>
   );
 }
 
@@ -68,11 +68,12 @@ function StyleCard({ style: s, index }: { style: StyleEntry; index: number }) {
   const c = s.card;
   return (
     <li
-      className="flex flex-col overflow-hidden rounded-card ring-1 ring-black/10 transition-shadow duration-300 hover:shadow-raised"
-      style={{ background: c.bg, color: c.ink }}
+      data-style-card={s.slug}
+      className={`${fontVars.hub} relative z-20 flex flex-col overflow-hidden rounded-card ring-1 ring-black/10 transition-shadow duration-300 hover:shadow-[0_0_0_1.5px_var(--card-edge),0_28px_60px_-28px_rgb(0_0_0/0.45)] focus-within:shadow-[0_0_0_1.5px_var(--card-edge)]`}
+      style={{ background: c.bg, color: c.ink, fontFamily: "var(--font-hub-sans)", ["--card-edge" as string]: c.edge }}
     >
       <div className="flex flex-1 flex-col p-6 md:p-8">
-        <div className="flex items-baseline justify-between font-mono text-xs" style={{ color: c.muted }}>
+        <div className="flex items-baseline justify-between text-xs" style={{ color: c.muted, fontFamily: "var(--font-hub-mono)" }}>
           <span>0{index + 1}</span>
           <span className="tracking-wider uppercase">{s.lens}</span>
         </div>
