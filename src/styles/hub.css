@@ -80,11 +80,11 @@
 }
 .hub-flood[data-theme="hawker-bright"] h1 { line-height: 0.92; }
 
-/* Shophouse Heritage: limewash with a faint tile lattice, soft wonky Fraunces */
+/* Shophouse Heritage: celadon with a faint glaze lattice, soft wonky Fraunces */
 .hub-flood[data-theme="shophouse-heritage"] {
   background:
-    repeating-linear-gradient(45deg, rgb(46 110 94 / 0.06) 0 1px, transparent 1px 26px),
-    repeating-linear-gradient(-45deg, rgb(58 156 166 / 0.06) 0 1px, transparent 1px 26px),
+    repeating-linear-gradient(45deg, rgb(46 110 94 / 0.09) 0 1px, transparent 1px 26px),
+    repeating-linear-gradient(-45deg, rgb(31 95 82 / 0.07) 0 1px, transparent 1px 26px),
     var(--bg);
 }
 .hub-flood[data-theme="shophouse-heritage"] h1,

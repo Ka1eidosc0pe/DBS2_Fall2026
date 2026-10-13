@@ -6,7 +6,7 @@ A travel guide to Singapore designed in three visual styles. Each has a mood boa
 | --- | --- | --- |
 | **Marina Noir** | Crazy Rich Singapore: onyx, oxblood, champagne | *The Concierge*, evenings by invitation |
 | **Hawker Bright** | Everyday Singapore: kopi, pandan, HDB pastels | *Makan Map*, eat like a local |
-| **Shophouse Heritage** | Historic Singapore: Peranakan jade, teal, coral | *The Heritage Trail*, a self-guided walk |
+| **Shophouse Heritage** | Historic Singapore: celadon, Peranakan jade, coral | *The Heritage Trail*, a self-guided walk |
 
 **Live:** https://dbs2-fall2026.vercel.app
 
