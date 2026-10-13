@@ -35,12 +35,12 @@ function Shot({ s, sizes }: { s: Shot; sizes: string }) {
 }
 
 const BOARD_A: Shot[] = [
-  { src: P("emerald-hill"), alt: "Terrace houses on Emerald Hill in periwinkle blue and dark timber, under a blue sky.", span: "col-span-1 md:col-span-3", ratio: "3 / 4", arch: true, pos: "30% 50%", reveal: true },
+  { src: P("emerald-hill"), alt: "Terrace houses on Emerald Hill in periwinkle blue and dark timber, under a blue sky.", span: "col-span-2 mx-auto w-3/5 md:col-span-3 md:w-full", ratio: "3 / 4", arch: true, pos: "30% 50%", reveal: true },
   { src: P("koon-seng"), alt: "A row of pastel shophouses on Koon Seng Road in pink, sage, grey, terracotta and cyan.", span: "col-span-2 md:col-span-6", ratio: "3 / 2", pos: "50% 40%" },
   { src: P("gopuram"), alt: "The tiered gopuram of Sri Mariamman Temple, covered in painted deities.", span: "col-span-1 md:col-span-3", ratio: "3 / 4", arch: true, pos: "50% 25%", reveal: true },
   { src: P("five-foot-way"), alt: "A cobalt-blue five-foot way with a rounded arch and green tiled floor.", span: "col-span-1 md:col-span-3", ratio: "3 / 4", pos: "50% 40%" },
   { src: P("baba-house"), alt: "A periwinkle Peranakan townhouse with arched shutters, a ceramic frieze and green roof-tile eaves.", span: "col-span-2 md:col-span-6", ratio: "3 / 2", pos: "50% 25%" },
-  { src: P("thian-hock-keng"), alt: "Patterned floor tiles in blue, white and terracotta in front of a gilded altar.", span: "col-span-1 md:col-span-3", ratio: "3 / 4", pos: "50% 82%" },
+  { src: P("thian-hock-keng"), alt: "Patterned floor tiles in blue, white and terracotta in front of a gilded altar.", span: "col-span-2 mx-auto w-3/5 md:col-span-3 md:w-full", ratio: "3 / 4", pos: "50% 82%" },
 ];
 
 const BOARD_B: Shot[] = [

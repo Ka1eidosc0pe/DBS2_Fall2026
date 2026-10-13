@@ -26,7 +26,7 @@ export function TrailRow({
     <li className="sh-fade-up flex items-center gap-2 rounded-card border border-line bg-surface p-2.5 pl-3.5">
       <span aria-hidden className="sh-year w-7 shrink-0 text-center text-2xl leading-none text-brand">{index + 1}</span>
       <div className="min-w-0 flex-1">
-        <p className="sh-title truncate text-[1.0625rem] leading-tight text-ink">{landmark.name}</p>
+        <p className="sh-title text-[1.0625rem] leading-tight text-ink">{landmark.name}</p>
         <p className="mt-1 flex items-center gap-1.5 text-xs text-ink-muted">
           <DistrictDot color={d.color} size={8} />
           {d.name} · {minutesLabel(landmark.minutes)}
@@ -49,8 +49,10 @@ export function TrailRow({
 
 export function routeSummary(stops: Landmark[]) {
   const mins = stops.reduce((n, s) => n + s.minutes, 0);
-  const hours = Math.max(1, Math.round(mins / 30) / 2);
-  const label = hours === 1 ? "1 hour" : `${hours} hours`;
+  const halves = Math.max(2, Math.round(mins / 30)); // in half hours
+  const h = Math.floor(halves / 2);
+  const half = halves % 2 === 1;
+  const label = h === 1 ? (half ? "an hour and a half" : "an hour") : half ? `${h} and a half hours` : `${h} hours`;
   return { mins, text: `${stops.length} stops, about ${label}` };
 }
 

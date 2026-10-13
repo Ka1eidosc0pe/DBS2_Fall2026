@@ -109,7 +109,7 @@ export function ToastRegion({ toasts, dismiss }: { toasts: ToastData[]; dismiss:
     <div
       role="status"
       aria-live="polite"
-      className="pointer-events-none fixed inset-x-0 bottom-0 z-[70] flex flex-col items-center gap-2 p-4 pb-[max(1rem,env(safe-area-inset-bottom))] md:items-end md:p-6"
+      className="pointer-events-none fixed inset-x-0 bottom-0 z-[70] flex flex-col items-center gap-2 p-4 pb-[max(1rem,env(safe-area-inset-bottom))] md:items-start md:p-6"
     >
       {toasts.map((t) => (
         <ToastCard key={t.id} toast={t} onClose={() => dismiss(t.id)} />
